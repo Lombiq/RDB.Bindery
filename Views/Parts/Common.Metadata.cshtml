@@ -1,0 +1,6 @@
+﻿@{
+    var dateTime = Model.ContentPart.CreatedUtc.ToString("yyyy-MM-dd");
+    var pubString = Model.ContentPart.CreatedUtc.ToString("dd MMMM yyyy");
+}
+
+<span class="published"><time datetime="@dateTime" pubdate>@T("Created on {0}", pubString)</time></span>

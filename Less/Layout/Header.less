@@ -1,0 +1,256 @@
+@import "../Navs.less";
+@import "../../Vendor/Bootstrap/less/dropdowns.less";
+
+//
+// Site Header
+// --------------------------------------------------
+
+.site-header {
+	background: #444C4E;
+	padding: 45px 30px 45px 0;
+    
+    @media (min-width: @screen-md-min) { 
+        padding-right: 0;
+    }
+}
+
+.site-header > .container > .row {
+    position: relative;
+}
+
+
+// Branding -----------------------------------------
+
+#site-branding a {
+	color: #fefefe;
+	font-weight: 700;
+	font-size: 24px;
+	
+	&:hover {
+		color: #bbb;
+		text-decoration: none;
+	}
+}
+
+
+// Navigation toggle --------------------------------
+
+.nav-toggle {
+    display: block;
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    top: 5px;
+    right: -15px;
+    
+    @media (min-width: @screen-md-min) { 
+        display: none;
+    }
+
+    span,
+    span:before,
+    span:after {
+        background: #fefefe;
+        display: block;
+        height: 2px;
+        width: 100%;
+        transition: all 0.1s ease-in-out;
+    }
+
+    span {
+        margin-top: 10px;
+        position: relative;
+    }
+
+    span:before,
+    span:after {
+        content: " ";
+        position: absolute
+    }
+
+    span:before {
+        top: -10px;
+    }
+
+    span:after {
+        bottom: -10px;
+    }
+}
+
+.nav-toggle[aria-expanded="true"] {
+    span {
+        background: transparent;        
+    }
+
+    
+    span:before,
+    span:after {
+        top: 0;
+    }
+
+    span:before {
+        transform: rotate(45deg);
+    }
+
+    span:after {
+        transform: rotate(-45deg);
+    }
+}
+
+#site-navigation {
+    display: none;
+    
+    @media (min-width: @screen-md-min) { 
+        display: block;
+        height: auto !important;
+    }
+}
+
+#site-navigation[aria-expanded="true"] {
+    display: block;
+}
+
+
+// Navigation ---------------------------------------
+
+#site-navigation {
+    a {
+        color: #bbb;
+        position: relative;
+        
+        &:hover {
+            color: #fefefe;
+        }
+
+        .dd-caret {
+            display: inline-block; 
+            width: 0; 
+            height: 0; 
+            border-top: 4px solid #bbb; 
+            border-right: 4px solid transparent; 
+            border-left: 4px solid transparent; 
+            content: "";
+            margin-left: 4px; 
+            position: absolute;
+            right: 15px; 
+            top: 50%;
+            transform: translateY(-50%);
+    
+            @media (min-width: @screen-md-min) { 
+                position: relative;
+                transform: none;
+                vertical-align: middle; 
+                right: 0;
+                top: 0;
+            }
+        }
+    }
+    
+    li.active > a {
+        color: #fefefe;
+        
+        .dd-caret {
+            border-top-color: #fefefe;
+        }
+    }
+    
+    nav {
+        margin-top: 24px;
+    }
+    
+    nav > ul {
+        @media (min-width: @screen-md-min) { 
+            // Keeps the first menu item aligned with the grid.
+            position: relative;
+            left: -15px;
+        }
+    }
+    
+	nav > ul > li {
+        // Add a border to the bottom of each item on small screens for
+        // easy reading.
+        border-bottom: 1px solid #717779;
+        margin-bottom: 0;
+        
+        @media (min-width: @screen-md-min) { 
+            border-bottom: none;
+            float: left;
+        }
+    }
+    
+    nav > ul > li > a {
+        display: block;
+        font-weight: 700;
+        text-transform: uppercase;
+        padding: 18px 15px;
+        
+        @media (min-width: @screen-md-min) { 
+            padding: 10px 15px;
+        }
+        
+        &:hover {
+            background-color: #2D3233;
+        }
+        
+        &:focus {
+            background-color: #414748;
+        }
+    }
+    
+    // First level dropdowns
+    
+    nav > ul > li.dropdown > a:hover > .dd-caret {
+        border-top-color: #fefefe;
+    }
+
+    nav > ul > li.open > a {
+        background-color: #2d3233 !important;
+        color: #fefefe !important;
+        
+        .dd-caret {
+            border-top-color: #fefefe !important;
+        }
+    }
+    
+    nav > ul > li.dropdown > ul.dropdown-menu {
+        background-color: #2D3233;
+        border: none;
+        box-shadow: none;
+        float: none;
+        width: 100%;
+        margin: 0;
+        position: relative;
+        
+        @media (min-width: @screen-md-min) { 
+            width: 260px;
+            position: absolute;
+            float: left;
+        }
+    }
+    
+    nav > ul > li.dropdown > ul.dropdown-menu > li:last-child {
+        margin-bottom: 0;
+    }
+    
+    nav > ul > li.dropdown > ul.dropdown-menu > li > a {
+        word-wrap: normal;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        
+        &:active {
+            background-color: #4A4F50 !important;
+        }
+        
+        &:hover {
+            background-color: #3D4344;
+        }
+        
+        &:focus {
+            background-color: #404546;
+        }
+    }
+    
+    nav > ul > li.dropdown > ul.dropdown-menu > li.active > a {
+        background-color: #4A4F50;
+    }
+}

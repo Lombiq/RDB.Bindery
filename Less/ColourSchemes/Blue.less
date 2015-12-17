@@ -1,0 +1,112 @@
+﻿//
+// Blue
+// --------------------------------------------------
+// All styling for the blue colour scheme.
+// --------------------------------------------------
+
+//
+// Site Header
+// --------------------------------------------------
+
+.site-header {
+    background: #a0d8d5;
+}
+
+// Branding -----------------------------------------
+
+#site-branding a {
+	color: #232929;
+	
+	&:hover {
+        color: #557573;
+	}
+}
+
+// Navigation toggle --------------------------------
+
+.nav-toggle {
+    span,
+    span:before,
+    span:after {
+        background: #232929;
+    }
+}
+
+// Navigation ---------------------------------------
+
+#site-navigation {
+    a {
+        color: #557573;
+
+        &:hover {
+            color: #232929;
+        }
+
+        .dd-caret {
+            border-top-color: #557573;
+        }
+    }
+
+    li.active > a {
+        color: #232929;
+
+        .dd-caret {
+            border-top-color: #232929;
+        }
+    }
+
+    nav > ul > li {
+        border-bottom-color: #608a88;
+    }
+
+    nav > ul > li > a {
+        &:hover {
+            background-color: #7aafac;
+        }
+
+        &:focus {
+            background-color: #8abfbc;
+        }
+    }
+
+    // First level dropdowns
+
+    nav > ul > li.dropdown > a:hover > .dd-caret {
+        border-top-color: #232929;
+    }
+
+    nav > ul > li.open > a {
+        background-color: #52544e !important;
+        color: #fefefe !important;
+        
+        .dd-caret {
+            border-top-color: #fefefe !important;
+        }
+    }
+
+    nav > ul > li.dropdown > ul.dropdown-menu {
+        background-color: #52544e;
+
+        a {
+            color: #cccbcb; // For better readability.
+        }
+    }
+
+    nav > ul > li.dropdown > ul.dropdown-menu > li > a {        
+        &:active {
+            background-color: #42443e !important;
+        }
+        
+        &:hover {
+            background-color: #444640;
+        }
+        
+        &:focus {
+            background-color: #383a36;
+        }
+    }
+
+    nav > ul > li.dropdown > ul.dropdown-menu > li.active > a {
+        background-color: #3a3c37;
+    }
+}

@@ -1,0 +1,23 @@
+﻿@model RDB.Bindery.Models.BinderyThemeSettingsPart
+
+@{
+    using (Script.Head()) 
+    {
+        <style>
+            .ta-settings {
+                margin-bottom: 19px;
+            }
+
+            .ta-settings label {
+                font-weight: bold;
+                font-size: 14px;
+                margin-bottom: 4px;
+            }
+        </style>    
+    } 
+}
+
+<div class="ta-settings">
+    <label for="@Html.IdFor(x => x.SelectedColourScheme)">@T("Colour Scheme")</label>
+    @Html.DropDownListFor(x => x.SelectedColourScheme, Model.ColourSchemes)
+</div>

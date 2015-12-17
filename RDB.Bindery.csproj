@@ -1,0 +1,367 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{87272C11-A750-4E7A-A349-067895EC5880}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RDB.Bindery</RootNamespace>
+    <AssemblyName>RDB.Bindery</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>..\..\..\OrchardBasicCorrectness.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Mvc, Version=5.2.3, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\lib\aspnetmvc\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Gallery.png" />
+    <Content Include="gulpfile.js" />
+    <Content Include="License.txt" />
+    <Content Include="Scripts\Site.js" />
+    <Content Include="Scripts\Site.min.js" />
+    <Content Include="Styles\ColourSchemes\Black.css" />
+    <Content Include="Styles\ColourSchemes\Black.min.css" />
+    <Content Include="Styles\ColourSchemes\Blue.css" />
+    <Content Include="Styles\ColourSchemes\Blue.min.css" />
+    <Content Include="Styles\ColourSchemes\Green.css" />
+    <Content Include="Styles\ColourSchemes\Green.min.css" />
+    <Content Include="Styles\ColourSchemes\Grey.css" />
+    <Content Include="Styles\ColourSchemes\Grey.min.css" />
+    <Content Include="Styles\ColourSchemes\White.css" />
+    <Content Include="Styles\ColourSchemes\White.min.css" />
+    <Content Include="Styles\Site.css" />
+    <Content Include="Styles\Site.min.css" />
+    <Content Include="Vendor\Bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Vendor\Bootstrap\js\affix.js" />
+    <Content Include="Vendor\Bootstrap\js\alert.js" />
+    <Content Include="Vendor\Bootstrap\js\bootstrap.js" />
+    <Content Include="Vendor\Bootstrap\js\bootstrap.min.js" />
+    <Content Include="Vendor\Bootstrap\js\button.js" />
+    <Content Include="Vendor\Bootstrap\js\carousel.js" />
+    <Content Include="Vendor\Bootstrap\js\collapse.js" />
+    <Content Include="Vendor\Bootstrap\js\dropdown.js" />
+    <Content Include="Vendor\Bootstrap\js\modal.js" />
+    <Content Include="Vendor\Bootstrap\js\npm.js" />
+    <Content Include="Vendor\Bootstrap\js\popover.js" />
+    <Content Include="Vendor\Bootstrap\js\scrollspy.js" />
+    <Content Include="Vendor\Bootstrap\js\tab.js" />
+    <Content Include="Vendor\Bootstrap\js\tooltip.js" />
+    <Content Include="Vendor\Bootstrap\js\transition.js" />
+    <Content Include="Web.config" />
+    <Content Include="Scripts\Web.config" />
+    <Content Include="Styles\Web.config" />
+    <Content Include="Theme.txt" />
+    <Content Include="Theme.png" />
+    <Content Include="Placement.info" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Orchard\Orchard.Framework.csproj">
+      <Project>{2D1D92BB-4555-4CBE-8D0E-63563D6CE4C6}</Project>
+      <Name>Orchard.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Core\Orchard.Core.csproj">
+      <Project>{9916839C-39FC-4CEB-A5AF-89CA7E87119F}</Project>
+      <Name>Orchard.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Extensions\WorkContextExtensions.cs" />
+    <Compile Include="Handlers\BinderyThemeSettingsPartHandler.cs" />
+    <Compile Include="Models\BinderyThemeSettingsPart.cs" />
+    <Compile Include="ResourceManifest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Vendor\Bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Vendor\Bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Vendor\Bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Vendor\Bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Vendor\Bootstrap\less\alerts.less" />
+    <Content Include="Vendor\Bootstrap\less\badges.less" />
+    <Content Include="Vendor\Bootstrap\less\bootstrap.less" />
+    <Content Include="Vendor\Bootstrap\less\breadcrumbs.less" />
+    <Content Include="Vendor\Bootstrap\less\button-groups.less" />
+    <Content Include="Vendor\Bootstrap\less\buttons.less" />
+    <Content Include="Vendor\Bootstrap\less\carousel.less" />
+    <Content Include="Vendor\Bootstrap\less\close.less" />
+    <Content Include="Vendor\Bootstrap\less\code.less" />
+    <Content Include="Vendor\Bootstrap\less\component-animations.less" />
+    <Content Include="Vendor\Bootstrap\less\dropdowns.less" />
+    <Content Include="Vendor\Bootstrap\less\forms.less" />
+    <Content Include="Vendor\Bootstrap\less\glyphicons.less" />
+    <Content Include="Vendor\Bootstrap\less\grid.less" />
+    <Content Include="Vendor\Bootstrap\less\input-groups.less" />
+    <Content Include="Vendor\Bootstrap\less\jumbotron.less" />
+    <Content Include="Vendor\Bootstrap\less\labels.less" />
+    <Content Include="Vendor\Bootstrap\less\list-group.less" />
+    <Content Include="Vendor\Bootstrap\less\media.less" />
+    <Content Include="Vendor\Bootstrap\less\mixins.less" />
+    <Content Include="Vendor\Bootstrap\less\mixins\alerts.less" />
+    <Content Include="Vendor\Bootstrap\less\mixins\background-variant.less" />
+    <Content Include="Vendor\Bootstrap\less\mixins\border-radius.less" />
+    <Content Include="Vendor\Bootstrap\less\mixins\buttons.less" />
+    <Content Include="Vendor\Bootstrap\less\mixins\center-block.less" />
+    <Content Include="Vendor\Bootstrap\less\mixins\clearfix.less" />
+    <Content Include="Vendor\Bootstrap\less\mixins\forms.less" />
+    <Content Include="Vendor\Bootstrap\less\mixins\gradients.less" />
+    <Content Include="Vendor\Bootstrap\less\mixins\grid-framework.less" />
+    <Content Include="Vendor\Bootstrap\less\mixins\grid.less" />
+    <Content Include="Vendor\Bootstrap\less\mixins\hide-text.less" />
+    <Content Include="Vendor\Bootstrap\less\mixins\image.less" />
+    <Content Include="Vendor\Bootstrap\less\mixins\labels.less" />
+    <Content Include="Vendor\Bootstrap\less\mixins\list-group.less" />
+    <Content Include="Vendor\Bootstrap\less\mixins\nav-divider.less" />
+    <Content Include="Vendor\Bootstrap\less\mixins\nav-vertical-align.less" />
+    <Content Include="Vendor\Bootstrap\less\mixins\opacity.less" />
+    <Content Include="Vendor\Bootstrap\less\mixins\pagination.less" />
+    <Content Include="Vendor\Bootstrap\less\mixins\panels.less" />
+    <Content Include="Vendor\Bootstrap\less\mixins\progress-bar.less" />
+    <Content Include="Vendor\Bootstrap\less\mixins\reset-filter.less" />
+    <Content Include="Vendor\Bootstrap\less\mixins\reset-text.less" />
+    <Content Include="Vendor\Bootstrap\less\mixins\resize.less" />
+    <Content Include="Vendor\Bootstrap\less\mixins\responsive-visibility.less" />
+    <Content Include="Vendor\Bootstrap\less\mixins\size.less" />
+    <Content Include="Vendor\Bootstrap\less\mixins\tab-focus.less" />
+    <Content Include="Vendor\Bootstrap\less\mixins\table-row.less" />
+    <Content Include="Vendor\Bootstrap\less\mixins\text-emphasis.less" />
+    <Content Include="Vendor\Bootstrap\less\mixins\text-overflow.less" />
+    <Content Include="Vendor\Bootstrap\less\mixins\vendor-prefixes.less" />
+    <Content Include="Vendor\Bootstrap\less\modals.less" />
+    <Content Include="Vendor\Bootstrap\less\navbar.less" />
+    <Content Include="Vendor\Bootstrap\less\navs.less" />
+    <Content Include="Vendor\Bootstrap\less\normalize.less" />
+    <Content Include="Vendor\Bootstrap\less\pager.less" />
+    <Content Include="Vendor\Bootstrap\less\pagination.less" />
+    <Content Include="Vendor\Bootstrap\less\panels.less" />
+    <Content Include="Vendor\Bootstrap\less\popovers.less" />
+    <Content Include="Vendor\Bootstrap\less\print.less" />
+    <Content Include="Vendor\Bootstrap\less\progress-bars.less" />
+    <Content Include="Vendor\Bootstrap\less\responsive-embed.less" />
+    <Content Include="Vendor\Bootstrap\less\responsive-utilities.less" />
+    <Content Include="Vendor\Bootstrap\less\scaffolding.less" />
+    <Content Include="Vendor\Bootstrap\less\tables.less" />
+    <Content Include="Vendor\Bootstrap\less\theme.less" />
+    <Content Include="Vendor\Bootstrap\less\thumbnails.less" />
+    <Content Include="Vendor\Bootstrap\less\tooltip.less" />
+    <Content Include="Vendor\Bootstrap\less\type.less" />
+    <Content Include="Vendor\Bootstrap\less\utilities.less" />
+    <Content Include="Vendor\Bootstrap\less\variables.less" />
+    <Content Include="Vendor\Bootstrap\less\wells.less" />
+    <Content Include="Vendor\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Less\Areas\Users.less" />
+    <Content Include="Less\Buttons.less" />
+    <Content Include="Less\Code.less" />
+    <Content Include="Less\ColourSchemes\Black.less" />
+    <Content Include="Less\ColourSchemes\Blue.less" />
+    <Content Include="Less\ColourSchemes\Green.less" />
+    <Content Include="Less\ColourSchemes\Grey.less" />
+    <Content Include="Less\ColourSchemes\White.less" />
+    <Content Include="Less\ContentParts\Body.less" />
+    <Content Include="Less\ContentParts\Comments.less" />
+    <Content Include="Less\ContentParts\Layout.less" />
+    <Content Include="Less\ContentParts\Subtitle.less" />
+    <Content Include="Less\ContentParts\Title.less" />
+    <Content Include="Less\ContentTypes\Blog.less" />
+    <Content Include="Less\ContentTypes\Common.less" />
+    <Content Include="Less\ContentTypes\Page.less" />
+    <Content Include="Less\Forms.less" />
+    <Content Include="Less\Grid.less" />
+    <Content Include="Less\Layout\BeforeContent.less" />
+    <Content Include="Less\Layout\Content.less" />
+    <Content Include="Less\Layout\Footer.less" />
+    <Content Include="Less\Layout\Header.less" />
+    <Content Include="Less\Layout\Messages.less" />
+    <Content Include="Less\Layout\SiteMeta.less" />
+    <Content Include="Less\Mixins.less" />
+    <Content Include="Less\Navs.less" />
+    <Content Include="Less\Normalize.less" />
+    <Content Include="Less\Pager.less" />
+    <Content Include="Less\Scaffolding.less" />
+    <Content Include="Less\Site.less" />
+    <Content Include="Less\Tables.less" />
+    <Content Include="Less\Type.less" />
+    <Content Include="Less\Utilities.less" />
+    <Content Include="Less\Variables.less" />
+    <Content Include="Less\Widgets\BlogArchives.less" />
+    <Content Include="Less\Widgets\Common.less" />
+    <Content Include="Less\Widgets\RecentBlogPosts.less" />
+    <Content Include="Less\Widgets\Search.less" />
+    <Content Include="Less\Widgets\TagCloud.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include=".gitignore" />
+    <Content Include="package.json" />
+    <Content Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\CommentMetadata.cshtml" />
+    <Content Include="Views\Content.cshtml" />
+    <Content Include="Views\Content.Summary.cshtml" />
+    <Content Include="Views\Copyright.cshtml" />
+    <Content Include="Views\EditorTemplates\Parts.Comment.cshtml" />
+    <Content Include="Views\EditorTemplates\Parts\BinderyThemeSettings.cshtml" />
+    <Content Include="Views\Elements\Column.cshtml" />
+    <Content Include="Views\Elements\Grid.cshtml" />
+    <Content Include="Views\Fields\TaxonomyField.cshtml" />
+    <Content Include="Views\Layout.cshtml" />
+    <Content Include="Views\LogOn.cshtml" />
+    <Content Include="Views\Menu-Main-Menu.cshtml" />
+    <Content Include="Views\MenuItem-Main-Menu.cshtml" />
+    <Content Include="Views\MenuItemLinkDropdown.cshtml" />
+    <Content Include="Views\Message.cshtml" />
+    <Content Include="Views\NotFound.cshtml" />
+    <Content Include="Views\Orchard.Blogs\BlogPost\ListByArchive.cshtml" />
+    <Content Include="Views\Orchard.Search\Search\Index.cshtml" />
+    <Content Include="Views\Orchard.Tags\Home\Search.cshtml" />
+    <Content Include="Views\Orchard.Users\Account\AccessDenied.cshtml" />
+    <Content Include="Views\Orchard.Users\Account\ChallengeEmailFail.cshtml" />
+    <Content Include="Views\Orchard.Users\Account\ChallengeEmailSent.cshtml" />
+    <Content Include="Views\Orchard.Users\Account\ChallengeEmailSuccess.cshtml" />
+    <Content Include="Views\Orchard.Users\Account\ChangePassword.cshtml" />
+    <Content Include="Views\Orchard.Users\Account\ChangePasswordSuccess.cshtml" />
+    <Content Include="Views\Orchard.Users\Account\LostPassword.cshtml" />
+    <Content Include="Views\Orchard.Users\Account\RegistrationPending.cshtml" />
+    <Content Include="Views\Orchard.Users\Account\RequestLostPassword.cshtml" />
+    <Content Include="Views\Pager.cshtml" />
+    <Content Include="Views\Pager.First.cshtml" />
+    <Content Include="Views\Pager.Last.cshtml" />
+    <Content Include="Views\Parts\Blogs.BlogArchives.cshtml" />
+    <Content Include="Views\Parts\Blogs.RecentBlogPosts.cshtml" />
+    <Content Include="Views\Parts\Comment.cshtml" />
+    <Content Include="Views\Parts\CommentForm.cshtml" />
+    <Content Include="Views\Parts\Common.Body.Summary.cshtml" />
+    <Content Include="Views\Parts\Common.Metadata.cshtml" />
+    <Content Include="Views\Parts\Layout.cshtml" />
+    <Content Include="Views\Parts\Layout.Summary.cshtml" />
+    <Content Include="Views\Parts\ListOfComments.cshtml" />
+    <Content Include="Views\Parts\MenuWidget.cshtml" />
+    <Content Include="Views\Parts\Search.SearchForm.cshtml" />
+    <Content Include="Views\Parts\Tags.ShowTags.cshtml" />
+    <Content Include="Views\Parts\Title.cshtml" />
+    <Content Include="Views\Parts\Title.Summary.cshtml" />
+    <Content Include="Views\PoweredBy.cshtml" />
+    <Content Include="Views\Register.cshtml" />
+    <Content Include="Views\ThemeSettings.cshtml" />
+    <Content Include="Views\UserActions.cshtml" />
+    <Content Include="Views\Widget-Navigation.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Less\Alerts.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Less\Close.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Less\Layout\AfterContent.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Media.Summary.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Media.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Parts\Common.Metadata.Summary.cshtml" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target> -->
+  <Target Name="AfterBuild" DependsOnTargets="AfterBuildCompiler">
+    <PropertyGroup>
+      <AreasManifestDir>$(ProjectDir)\..\Manifests</AreasManifestDir>
+    </PropertyGroup>
+    <!-- If this is an area child project, uncomment the following line:
+    <CreateAreaManifest AreaName="$(AssemblyName)" AreaType="Child" AreaPath="$(ProjectDir)" ManifestPath="$(AreasManifestDir)" ContentFiles="@(Content)" />
+    -->
+    <!-- If this is an area parent project, uncomment the following lines:
+    <CreateAreaManifest AreaName="$(AssemblyName)" AreaType="Parent" AreaPath="$(ProjectDir)" ManifestPath="$(AreasManifestDir)" ContentFiles="@(Content)" />
+    <CopyAreaManifests ManifestPath="$(AreasManifestDir)" CrossCopy="false" RenameViews="true" />
+    -->
+  </Target>
+  <Target Name="AfterBuildCompiler" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(ProjectDir)\..\$(ProjectName)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>45979</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://orchard.codeplex.com</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

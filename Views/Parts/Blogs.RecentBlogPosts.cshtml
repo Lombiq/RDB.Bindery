@@ -1,0 +1,27 @@
+﻿@using Orchard.ContentManagement
+
+@{
+    IEnumerable<object> blogPosts = Model.ContentItems.ContentItems;
+}
+
+@if (blogPosts.Any()) 
+{
+    <ul class="recent-blog-posts-list">
+        @foreach (dynamic blogPost in blogPosts)
+        {
+            var postUrl = Url.ItemDisplayUrl((IContent)blogPost.ContentItem);
+            var postTitle = Html.ItemDisplayText((IContent)blogPost.ContentItem);
+            
+            <li>
+                <a href="@postUrl">
+                    @postTitle
+                    @Display.Parts_Common_Metadata(ContentPart: blogPost.ContentItem.CommonPart)
+                </a>
+            </li>
+        }
+    </ul>
+}
+else
+{
+    <p>@T("There are no posts for this blog.")</p>
+}

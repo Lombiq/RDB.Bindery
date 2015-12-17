@@ -1,0 +1,82 @@
+﻿@using Orchard.Comments.Models
+
+@{
+    CommentsPart commentsPart = Model.ContentPart;
+
+    Model.List.Classes.Add("comments");
+}
+
+<h2 class="comment-count">@T.Plural("No Comments", "1 Comment", "{0} Comments", (int)Model.CommentCount)</h2>
+@Display(Model.List)
+
+@* render reply button if threaded comments enabled *@
+@if(commentsPart.ThreadedComments) {
+    Script.Require("jQuery");
+    using (Script.Foot()) {
+
+<script type="text/javascript">
+//<![CDATA[
+    $(function() {
+        $('.comment-reply-button').click(function() {
+            var self = $(this);
+
+            var reply = $('#Comments_RepliedOn');
+            var currentReply = reply.val(); @* Will have content if the form is appended. *@
+
+            @* If the form has been appended to a comment. *@
+            if (currentReply && currentReply.length > 0) {
+                @* Strip the repliedOn ID. *@
+                reply.val('');
+                
+                @* The cancel reply link was clicked. *@
+                if ($(this).html() === '@T("Cancel Reply").ToString()') {
+                    $(this).html('@T("Reply").ToString()')
+                    $('#comment-form-beacon').after($('.comment-form'));
+                }
+                @* The reply link was clicked. *@
+                else {
+                    $('.comment-form').parents('article').find('.comment-reply-button').html('@T("Reply").ToString()');
+                    
+                    
+                    @* Assign the repliedOn ID. *@
+                    var id = self.data('id');
+                    reply.val(id);
+    
+                    @* Append the reply form to the comment and add the cancel reply button. *@
+                    $('.comment-form').appendTo(self.parents('article').first());
+                    $(this).html('@T("Cancel Reply").ToString()')
+                }
+            } 
+            
+            
+            @* If the form hasn't been appended to a comment. *@
+            else {
+                @* Assign the repliedOn ID. *@
+                var id = self.data('id');
+                reply.val(id);
+
+                @* Append the reply form to the comment and add the cancel reply button. *@
+                $('.comment-form').appendTo(self.parents('article').first());
+                $(this).html('@T("Cancel Reply").ToString()')
+            }
+
+            @* Don't execute the link action. *@
+            return false;
+        });
+
+
+        @if (TempData.ContainsKey("Comments.RepliedOn")) {
+            // invalid form while replying
+
+        <text>
+        var reply = $('#Comments_RepliedOn');
+        reply.val(@TempData["Comments.RepliedOn"]);
+        $('.comment-form').appendTo($('#comment-@TempData["Comments.RepliedOn"]'));
+        </text>
+        }
+
+    });
+//]]>
+</script>
+ }
+}

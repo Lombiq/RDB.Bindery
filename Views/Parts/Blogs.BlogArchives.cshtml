@@ -1,0 +1,32 @@
+﻿@using Orchard.Blogs.Extensions;
+@using Orchard.Blogs.Models;
+
+@{
+    IEnumerable<KeyValuePair<ArchiveData, int>> archives = Model.Archives;
+    var dateTimeLocalization = WorkContext.Resolve<Orchard.Localization.Services.IDateTimeFormatProvider>();
+    var monthNames = dateTimeLocalization.MonthNames.ToArray();
+}
+
+<div class="archives">
+    @if (archives.Any()) 
+    {
+        <ul class="years">
+            @for (int year = archives.First().Key.Year; year >= archives.Last().Key.Year; year--)
+            {
+                var yearMonths = archives.Where(m => m.Key.Year == year);
+
+                if (yearMonths.Any())
+                {
+                    <li>
+                        <h4>@year</h4>
+                        @Html.UnorderedList(yearMonths, (t, i) => Html.Link(Html.Raw(string.Format("{0} ({1})", monthNames[t.Key.ToDateTime().Month - 1], t.Value)), Url.BlogArchiveMonth((BlogPart)Model.Blog, t.Key.Year, t.Key.Month)), "archiveMonthList")
+                    </li>
+                }
+            }
+        </ul>
+    } 
+    else
+    {
+        <p>@T("There are no posts for this blog.")</p>
+    }
+</div>

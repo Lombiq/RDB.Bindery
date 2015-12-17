@@ -1,0 +1,128 @@
+﻿@functions {
+    // Taken from The Theme Machine, allows for collapsable widget areas.
+    string CalcuClassify(string[] zoneNames, string classNamePrefix)
+    {
+        var zoneCounter = 0;
+        var zoneNumsFilled = string.Join("", zoneNames.Select(zoneName => { ++zoneCounter; return Model[zoneName] != null ? zoneCounter.ToString() : ""; }).ToArray());
+        return HasText(zoneNumsFilled) ? classNamePrefix + zoneNumsFilled : "";
+    }
+}
+
+@{
+    /*  Meta Setup
+        ================================================================ */
+
+    SetMeta(name: "viewport", content: "width=device-width,initial-scale=1");
+
+    /*  Head Includes
+        ================================================================ */
+
+    Style.Include("//fonts.googleapis.com/css?family=Open+Sans:400italic,400,700,300");
+    Style.Require("RDB.Bindery.Styles");
+
+    Script.Require("jQuery");
+    Script.Require("RDB.Bindery.Scripts");
+
+    /*  Widgetised Zone Prep.
+        ================================================================ */
+
+    var footerTwinsClass = CalcuClassify(new[] { "FooterFirst", "FooterSecond" }, "footer-twins-");
+
+    if (HasText(footerTwinsClass))
+    {
+        Model.Classes.Add(footerTwinsClass);
+    }
+
+    /*  Layout Wrapper
+        ================================================================ */
+
+    Model.Id = "layout-wrapper";
+    var tag = Tag(Model, "div");
+}
+
+@Display.ThemeSettings()
+
+@tag.StartElement
+    <header id="masthead" class="site-header" role="banner">
+        <div class="container">
+            <div class="row">
+                <div id="site-branding" class="col-md-12"><a href="@Href("~/")" rel="home">@WorkContext.CurrentSite.SiteName</a></div>
+                
+                @if (Model.Navigation != null)
+                {
+                    <a class="nav-toggle" href="#" data-toggle="collapse" data-target="#site-navigation">
+                        <span></span>
+                    </a>
+                    
+                    <div id="site-navigation" class="col-md-12 collapse" role="navigation">
+                        @Display(Model.Navigation)
+                    </div>
+                }
+            </div>
+        </div>
+    </header>
+    
+    <div id="content" role="main">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    @if (Model.Messages != null)
+                    {
+                        @Display(Model.Messages)
+                    }
+
+                    @if (Model.BeforeContent != null) 
+                    {
+                        @Display(Model.BeforeContent)
+                    }
+
+                    @Display(Model.Content)
+
+                    @if (Model.AfterContent != null) {
+                        @Display(Model.AfterContent)
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer id="colophon" class="site-footer" role="contentinfo">
+        @if (Model.FooterFirst != null || Model.FooterSecond != null)
+        {
+            <div class="footer-twins">
+                <div class="container">
+                    <div class="row">
+                        @if (Model.FooterSecond != null)
+                        {
+                            @Display(Model.FooterSecond)
+                        }
+                        @if (Model.FooterFirst != null)
+                        {
+                            @Display(Model.FooterFirst)
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+    
+        <div class="site-meta">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 copyright">
+                        @Display.Copyright()
+                    </div>
+                    
+                    <div class="col-md-6 user-actions">
+                        @Display.UserActions()
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="powered-by clearfix">
+                            @Display.PoweredBy()
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+@tag.EndElement

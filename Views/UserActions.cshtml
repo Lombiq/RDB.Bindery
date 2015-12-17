@@ -1,0 +1,14 @@
+﻿@if (WorkContext.CurrentUser != null)
+{
+    @T("Welcome, <strong>{0}</strong>!", Html.Raw("<a href=\"" + @Url.Action("ChangePassword", new { Controller = "Account", Area = "Orchard.Users" }) + "\">" + Html.ItemDisplayText(WorkContext.CurrentUser) + "</a>"))
+    @:&nbsp;@Html.ActionLink(T("Sign Out").ToString(), "LogOff", new { Controller = "Account", Area = "Orchard.Users", ReturnUrl = Context.Request.RawUrl }, new { rel = "nofollow" })
+        
+    if (AuthorizedFor(Orchard.Security.StandardPermissions.AccessAdminPanel))
+    {
+        @:&#8211; @Html.ActionLink(T("Dashboard").ToString(), "Index", new { Area = "Dashboard", Controller = "Admin" })
+    }
+}
+else
+{
+    @Html.ActionLink(T("Sign In").ToString(), "LogOn", new { Controller = "Account", Area = "Orchard.Users", ReturnUrl = (Request.QueryString["ReturnUrl"] ?? Request.RawUrl) }, new { rel = "nofollow" })
+}

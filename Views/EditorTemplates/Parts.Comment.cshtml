@@ -1,0 +1,30 @@
+﻿@model Orchard.Comments.Models.CommentPart
+
+@if (WorkContext.CurrentUser == null) {
+    <h3>@T("Add a Comment")</h3>
+    
+    <div class="form-group">
+        @Html.TextBoxFor(m => m.Author, new { placeholder = @T("Name").ToString() })
+    </div>
+    
+    <div class="form-group">
+        @Html.TextBoxFor(m => m.Email, new { placeholder = @T("Email").ToString() })
+    </div>
+    
+    <div class="form-group">
+        @Html.TextBoxFor(m => m.SiteName, new { placeholder = @T("URL").ToString() })
+    </div>
+}
+else {
+    @Html.Hidden("Name", WorkContext.CurrentUser.UserName ?? "")
+    @Html.Hidden("Email", WorkContext.CurrentUser.Email ?? "")
+    
+    <h3 id="commenter">@T("Howdy, {0}!", Convert.ToString(Html.ItemDisplayText(WorkContext.CurrentUser)))</h3>
+}
+
+<div class="form-group">
+    @Html.TextAreaFor(m => m.CommentText, new { rows = 10, cols = 30, @class = "comment-text", placeholder = @T("Comment").ToString() })
+</div>     
+
+@Html.HiddenFor(m => m.CommentedOn)
+@Html.HiddenFor(m => m.RepliedOn)

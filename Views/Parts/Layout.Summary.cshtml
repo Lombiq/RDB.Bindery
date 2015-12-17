@@ -1,0 +1,11 @@
+﻿@using Orchard.ContentManagement
+
+@{
+    var contentItem = (ContentItem)Model.ContentItem;
+    var layoutHtml = (string)Model.LayoutHtml;
+    var excerpt = new HtmlString(Html.Excerpt(layoutHtml, 200).ToString().Replace(Environment.NewLine, "</p>" + Environment.NewLine + "<p>"));
+}
+
+<div class="layout-excerpt">
+    <p>@excerpt @Html.ItemDisplayLink(T("Continue reading").ToString(), contentItem)</p>
+</div>

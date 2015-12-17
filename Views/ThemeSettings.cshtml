@@ -1,0 +1,12 @@
+﻿@using RDB.Bindery.Models
+@using Orchard.ContentManagement
+
+@{
+    var settings = WorkContext.CurrentSite.As<BinderyThemeSettingsPart>();
+    var selectColourScheme = settings.SelectedColourScheme;
+
+    if (selectColourScheme != "Default") 
+    {
+        Style.Include(String.Format("ColourSchemes/{0}.min.css", selectColourScheme));
+    }
+}
