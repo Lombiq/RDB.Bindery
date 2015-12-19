@@ -2,5 +2,5 @@ Name: RDB.Bindery
 Author: Ryan Drew Burnett
 Website: http://rdb.me
 Description: Content is at the heart of any blog - Bindery's muted styling is the perfect backdrop for your writing. This narrow, single column theme with uncomplicated typography will provide an effortless reading experience for your audience.
-Version: 1.0
+Version: 1.0.0
 Zones: Navigation, Messages, BeforeContent, Content, AfterContent, FooterFirst, FooterSecond
