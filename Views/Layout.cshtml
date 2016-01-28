@@ -46,15 +46,11 @@
     <header id="masthead" class="site-header" role="banner">
         <div class="container">
             <div class="row">
-                <div id="site-branding" class="col-md-12"><a href="@Href("~/")" rel="home">@WorkContext.CurrentSite.SiteName</a></div>
+                <div id="site-branding" class="col-md-5"><a href="@Href("~/")" rel="home">@WorkContext.CurrentSite.SiteName</a></div>
                 
                 @if (Model.Navigation != null)
                 {
-                    <a class="nav-toggle" href="#" data-toggle="collapse" data-target="#site-navigation">
-                        <span></span>
-                    </a>
-                    
-                    <div id="site-navigation" class="col-md-12 collapse" role="navigation">
+                    <div id="site-navigation" class="col-md-7 collapse" role="navigation">
                         @Display(Model.Navigation)
                     </div>
                 }

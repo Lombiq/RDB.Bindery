@@ -227,7 +227,6 @@
     <Content Include="Less\Layout\Messages.less" />
     <Content Include="Less\Layout\SiteMeta.less" />
     <Content Include="Less\Mixins.less" />
-    <Content Include="Less\Navs.less" />
     <Content Include="Less\Normalize.less" />
     <Content Include="Less\Pager.less" />
     <Content Include="Less\Scaffolding.less" />
@@ -259,9 +258,6 @@
     <Content Include="Views\Fields\TaxonomyField.cshtml" />
     <Content Include="Views\Layout.cshtml" />
     <Content Include="Views\LogOn.cshtml" />
-    <Content Include="Views\Menu-Main-Menu.cshtml" />
-    <Content Include="Views\MenuItem-Main-Menu.cshtml" />
-    <Content Include="Views\MenuItemLinkDropdown.cshtml" />
     <Content Include="Views\Message.cshtml" />
     <Content Include="Views\NotFound.cshtml" />
     <Content Include="Views\Orchard.Blogs\BlogPost\ListByArchive.cshtml" />
