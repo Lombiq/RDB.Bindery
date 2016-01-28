@@ -2735,6 +2735,10 @@ textarea {
 .orchard-customforms input[type="color"] {
   margin-bottom: 15px;
 }
+.required {
+  color: #f93333;
+  font-weight: 700;
+}
 .btn {
   display: inline-block;
   margin-bottom: 0;

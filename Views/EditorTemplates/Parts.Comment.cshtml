@@ -2,28 +2,34 @@
 
 @if (WorkContext.CurrentUser == null) {
     <h3>@T("Add a Comment")</h3>
-    
+    <p>@T("Fields marked <span class=\"required\">*</span> are required.")</p>
+
     <div class="form-group">
-        @Html.TextBoxFor(m => m.Author, new { placeholder = @T("Name").ToString() })
+        <label for="@Html.IdFor(m => m.Author)">@T("Name <span class=\"required\">*</span>")</label>
+        @Html.TextBoxFor(m => m.Author)
     </div>
-    
+
     <div class="form-group">
-        @Html.TextBoxFor(m => m.Email, new { placeholder = @T("Email").ToString() })
+        <label for="@Html.IdFor(m => m.Email)">@T("Email <span class=\"required\">*</span>")</label>
+        @Html.TextBoxFor(m => m.Email)
     </div>
-    
+
     <div class="form-group">
-        @Html.TextBoxFor(m => m.SiteName, new { placeholder = @T("URL").ToString() })
+        @Html.LabelFor(m => m.SiteName, T("Url"))
+        @Html.TextBoxFor(m => m.SiteName)
     </div>
 }
 else {
     @Html.Hidden("Name", WorkContext.CurrentUser.UserName ?? "")
     @Html.Hidden("Email", WorkContext.CurrentUser.Email ?? "")
-    
+
     <h3 id="commenter">@T("Howdy, {0}!", Convert.ToString(Html.ItemDisplayText(WorkContext.CurrentUser)))</h3>
+    <p>@T("Fields marked <span class=\"required\">*</span> are required.")</p>
 }
 
 <div class="form-group">
-    @Html.TextAreaFor(m => m.CommentText, new { rows = 10, cols = 30, @class = "comment-text", placeholder = @T("Comment").ToString() })
+    <label for="@Html.IdFor(m => m.CommentText)">@T("Comment <span class=\"required\">*</span>")</label>
+    @Html.TextAreaFor(m => m.CommentText, new { rows = 10, cols = 30, @class = "comment-text" })
 </div>     
 
 @Html.HiddenFor(m => m.CommentedOn)
