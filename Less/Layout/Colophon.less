@@ -23,12 +23,23 @@
     padding-left: 0;
     padding-right: 0;
     border-top: 1px solid #565353;
+    line-height: 1.8;
+}
+
+.theme-by {
+    text-align: center;
     padding-top: 24px;
-    padding-bottom: 24px;
+
+    @media (min-width: @screen-md-min) { 
+        text-align: left;
+        padding-bottom: 24px;
+    }
 }
 
 .powered-by-orchard {
-    text-align: right;
+    border-top: none;
+    text-align: center;
+    padding-bottom: 24px;
 
     svg {
         display: inline-block;
@@ -36,5 +47,11 @@
         width: 20px;
         vertical-align: text-top;
         fill: #9a9595;
+    }
+
+    @media (min-width: @screen-md-min) { 
+        border-top: 1px solid #565353;
+        text-align: right;
+        padding-top: 24px;
     }
 }

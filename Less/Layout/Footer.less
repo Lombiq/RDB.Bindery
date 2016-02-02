@@ -4,11 +4,12 @@
 
 .zone-footer {
     .make-md-column(12);
-
     font-size: @font-size-small;
     color: #9c9c9c;
     padding-top: 24px;
     padding-bottom: 24px;
+    text-align: center;
+    line-height: 1.8;
     
     a {
         color: #d4d4d4;
@@ -16,6 +17,10 @@
         &:hover {
             color: #fefefe;
         }
+    }
+
+    @media (min-width: @screen-md-min) { 
+        text-align: inherit;
     }
 }
 
@@ -26,6 +31,8 @@
     padding-right: 0;
 }
 
-.user-actions {
-    text-align: right;
+@media (min-width: @screen-md-min) { 
+    .user-actions {
+        text-align: right;
+    }
 }
