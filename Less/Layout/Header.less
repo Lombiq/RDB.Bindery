@@ -4,34 +4,61 @@
 
 .site-header {
 	background: #444C4E;
-	padding: 45px 30px 45px 0;
+	padding: 45px 0;
     
     @media (min-width: @screen-md-min) { 
         padding-right: 0;
     }
 }
 
-.site-header > .container > .row {
-    position: relative;
+.zone-header {
+    .make-md-column(4);
 }
 
 
 // Branding -----------------------------------------
 
-#site-branding a {
+#site-branding {
 	color: #fefefe;
+    display: block;
 	font-weight: 700;
 	font-size: 24px;
+    padding-right: 84px;
 	
 	&:hover {
 		color: #bbb;
 		text-decoration: none;
 	}
+
+    @media (min-width: @screen-md-min) { 
+        padding-right: 0;
+    }
 }
 
 
 // Navigation
 // --------------------------------------------------
+
+.zone-navigation {
+    .make-md-column(8);
+    margin-top: 35px;
+
+    @media (min-width: @screen-md-min) {
+        margin-top: 0;
+    }
+}
+
+.zone-navigation {
+    display: none;
+
+    @media (min-width: @screen-md-min) {
+        display: block;
+    }
+}
+
+.zone-navigation.open {
+    display: block;
+}
 
 // Reset all navigation lists.
 
@@ -41,32 +68,69 @@
 
 .zone-navigation ul,
 .zone-navigation ul li {
-    margin: 0;
+	margin: 0;
 	padding: 0;
 }
 
 // Align the navigation to the right of the site header. 
 
-.zone-navigation > nav {
-    text-align: right;
+@media (min-width: @screen-md-min) { 
+    .zone-navigation > nav {
+        text-align: right;
+
+        ul {
+            display: inline-block;
+        }
+    }
 }
 
-.zone-navigation > nav > ul {
-	display: inline-block;
+// Toggle -------------------------------------------
+
+#navigation-toggle {
+    color: #fefefe;
+    background: none;
+    border: 2px solid #fefefe;
+    position: absolute;
+    top: 38px;
+    right: 15px;
+
+    &:hover {
+        border-color: #bfbfbf;
+        color: #bfbfbf;
+    }
+
+    @media (min-width: @screen-md-min) {
+        display: none;
+    }
+}
+
+#navigation-toggle.open {
+    color: #444C4E;
+    background: #fefefe;
 }
 
 // Top level menu items -----------------------------
 
 .zone-navigation > nav > ul > li {
-	display: inline-block;
-	position: relative;
+    display: block;
+
+    @media (min-width: @screen-md-min) { 
+	    display: inline-block;
+	    position: relative;
+    }
 }
 
 .zone-navigation > nav > ul > li > a {
 	color: #bfbfbf;
-	margin-right: 18px;
-	display: inline-block;
-	line-height: 33px;
+    display: block;
+    padding: 10px 0;
+	
+    @media (min-width: @screen-md-min) { 
+	    display: inline-block;
+        line-height: 33px; // Vertically aligns the menu items with the site title.
+        margin-right: 18px;
+        padding: 0;
+    }
 }
 
 .zone-navigation > nav > ul > li.last > a {
@@ -80,54 +144,89 @@
 
 // First level menu items ---------------------------
 
+@media (min-width: @screen-md-min) {
+    .zone-navigation > nav > ul > li.dropdown > a:after {
+        content: " ";
+        border-top: 4px solid #bfbfbf;
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        display: inline-block;
+        margin-left: 6px;
+        height: 4px;
+        width: 4px;
+        vertical-align: middle;
+    }
+
+    .zone-navigation > nav > ul > li.dropdown:hover > a:after {
+        border-top-color: #fefefe;
+    }
+}
+
 .zone-navigation > nav > ul > li.dropdown > ul {
-	float: left;
-	position: absolute;
-	left: -999999%;
-	top: 100%;
-	padding-top: 30px;
-	opacity: 0;
-	display: block;
-	z-index: 9999;
-	width: 220px;
-	text-align: center;
-	transition: 0.25s all ease-in-out;
-	transition-property: opacity, padding-top;
-	margin-left: -110px;
+    display: block;
+    margin-left: 35px;
+
+    @media (min-width: @screen-md-min) { 
+	    float: left;
+	    left: -999999%;
+	    width: 220px;
+        padding-top: 30px;
+        position: absolute;
+        text-align: center;
+        top: 100%;
+        z-index: 9999;
+
+	    // Hide the dropdown menu, move position off screen
+        // so the element is still avalible for screen readers.
+	    margin-left: -110px;
+        opacity: 0;
+        transition: 0.25s all ease-in-out;
+	    transition-property: opacity, padding-top;
+    }
 }
 
-.zone-navigation > nav > ul > li.dropdown:hover > ul {
-	left: 50%;
-	padding-top: 10px;
-	opacity: 1;
+@media (min-width: @screen-md-min) {
+    // Show the dropdown menu when the user hovers over the parent item.
+    .zone-navigation > nav > ul > li.dropdown:hover > ul {
+	    left: 50%;
+	    padding-top: 10px;
+	    opacity: 1;
+    }
+
+    // Adds the triangle to the top of the dropdown on larger displays.
+    .zone-navigation > nav > ul > li.dropdown > ul > li:first-child:before {
+	    content: " ";
+	    display: block;
+	    position: relative;
+	    top: 0;
+	    left: 50%;
+	    margin-left: -10px;
+	    border-bottom: 10px solid #303030;
+	    border-left: 10px solid transparent;
+	    border-right: 10px solid transparent;
+	    width: 10px;
+    }
 }
 
-.zone-navigation > nav > ul > li.dropdown > ul > li:first-child:before {
-	content: " ";
-	display: block;
-	position: relative;
-	top: 0;
-	left: 50%;
-	margin-left: -10px;
-	border-bottom: 10px solid #303030;
-	border-left: 10px solid transparent;
-	border-right: 10px solid transparent;
-	width: 10px;
-}
-
+// The actual menu items.
 .zone-navigation > nav > ul > li.dropdown > ul > li > a {
-	padding: 15px 10px;
-	display: block;
-	background: #303030;
-	border-bottom: 1px solid #4a4a4a;
 	color: #bfbfbf;
+    display: block;
+    padding: 10px 0;
+
+    @media (min-width: @screen-md-min) {
+        background: #303030;
+	    border-bottom: 1px solid #4a4a4a;
+        padding: 15px 10px;
+    }
+}
+
+// Dropdown hover and current.
+.zone-navigation > nav > ul > li.dropdown > ul > li > a:hover,
+.zone-navigation > nav > ul > li.dropdown > ul > li.current > a {
+    color: #fefefe;
 }
 
 .zone-navigation > nav > ul > li.dropdown > ul > li:last-child > a {
 	border-bottom: none;
-}
-
-.zone-navigation > nav > ul > li.dropdown > ul > li > a:hover,
-.zone-navigation > nav > ul > li.dropdown > ul > li.current > a {
-	color: #fefefe;
 }

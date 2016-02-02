@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Contains all custom scripts for the RDB.Bindery theme.
  */
 

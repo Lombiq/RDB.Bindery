@@ -26,8 +26,20 @@
     /*  Widgetised Zone Prep.
         ================================================================ */
 
-    var footerTwinsClass = CalcuClassify(new[] { "FooterFirst", "FooterSecond" }, "footer-twins-");
+    var asideClass = CalcuClassify(new[] {"AsideFirst", "AsideSecond"}, "aside-");
+    var triplesClass = CalcuClassify(new[] {"TripleFirst", "TripleSecond", "TripleThird"}, "triple-");
+    var footerTwinsClass = CalcuClassify(new[] {"FooterTwinsFirst", "FooterTwinsSecond"}, "footer-twins-");
 
+    if (HasText(asideClass)) 
+    {
+        Model.Classes.Add(asideClass);
+    }
+
+    if (HasText(triplesClass))
+    {
+        Model.Classes.Add(triplesClass);
+    }
+    
     if (HasText(footerTwinsClass))
     {
         Model.Classes.Add(footerTwinsClass);
@@ -38,6 +50,16 @@
 
     Model.Id = "layout-wrapper";
     var tag = Tag(Model, "div");
+
+    /*  Ad Hoc Shape Inserts
+        ================================================================ */
+
+    WorkContext.Layout.Header.Add(New.Branding(), "1");
+
+    WorkContext.Layout.Footer.Add(New.Copyright(), "1");
+    WorkContext.Layout.Footer.Add(New.UserActions(), "2");
+
+    WorkContext.Layout.Colophon.Add(New.PoweredBy(), "1");
 }
 
 @Display.ThemeSettings()
@@ -46,23 +68,35 @@
     <header id="masthead" class="site-header" role="banner">
         <div class="container">
             <div class="row">
-                <div id="site-branding" class="col-md-5"><a href="@Href("~/")" rel="home">@WorkContext.CurrentSite.SiteName</a></div>
-                
-                @if (Model.Navigation != null)
+                @if (Model.Header != null) 
                 {
-                    <div id="site-navigation" class="col-md-7 collapse" role="navigation">
-                        @Display(Model.Navigation)
-                    </div>
+                    @Display(Model.Header)
+                }
+
+                @if (Model.Navigation != null) 
+                {
+                    <button id="navigation-toggle" class="btn btn-xs">@T("Menu")</button>
+                    @Display(Model.Navigation)
                 }
             </div>
         </div>
     </header>
-    
+
     <div id="content" role="main">
         <div class="container">
             <div class="row">
-                <div class="col-md-12">
-                    @if (Model.Messages != null)
+                @if (Model.BeforeMain != null) 
+                {
+                    @Display(Model.BeforeMain)
+                }
+
+                @if (Model.AsideFirst != null) 
+                {
+                    @Display(Model.AsideFirst)
+                }
+
+                <div id="main">
+                    @if (Model.Messages != null) 
                     {
                         @Display(Model.Messages)
                     }
@@ -74,27 +108,59 @@
 
                     @Display(Model.Content)
 
-                    @if (Model.AfterContent != null) {
+                    @if (Model.AfterContent != null) 
+                    {
                         @Display(Model.AfterContent)
                     }
                 </div>
+
+                @if (Model.AsideSecond != null) 
+                {
+                    @Display(Model.AsideSecond)
+                }
+
+                @if (Model.AfterMain != null) 
+                {
+                    @Display(Model.AfterMain)
+                }
             </div>
         </div>
     </div>
-    
+
+    <div id="triples">
+        <div class="container">
+            <div class="row">
+                @if (Model.TripleFirst != null) 
+                {
+                    @Display(Model.TripleFirst)
+                }
+
+                @if (Model.TripleSecond != null)
+                {
+                    @Display(Model.TripleSecond)
+                }
+
+                @if (Model.TripleThird != null)
+                {
+                    @Display(Model.TripleThird)
+                }
+            </div>
+        </div>
+    </div>
+
     <footer id="colophon" class="site-footer" role="contentinfo">
-        @if (Model.FooterFirst != null || Model.FooterSecond != null)
+        @if (Model.FooterTwinsFirst != null || Model.FooterTwinsSecond != null)
         {
-            <div class="footer-twins">
+            <div id="footer-twins">
                 <div class="container">
                     <div class="row">
-                        @if (Model.FooterSecond != null)
+                        @if (Model.FooterTwinsSecond != null)
                         {
-                            @Display(Model.FooterSecond)
+                            @Display(Model.FooterTwinsSecond)
                         }
                         @if (Model.FooterFirst != null)
                         {
-                            @Display(Model.FooterFirst)
+                            @Display(Model.FooterTwinsFirst)
                         }
                     </div>
                 </div>
@@ -104,19 +170,15 @@
         <div class="site-meta">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6 copyright">
-                        @Display.Copyright()
-                    </div>
-                    
-                    <div class="col-md-6 user-actions">
-                        @Display.UserActions()
-                    </div>
+                    @if (Model.Footer != null) 
+                    {
+                        @Display(Model.Footer)
+                    }
 
-                    <div class="col-md-12">
-                        <div class="powered-by clearfix">
-                            @Display.PoweredBy()
-                        </div>
-                    </div>
+                    @if (Model.Colophon != null) 
+                    {
+                        @Display(Model.Colophon)    
+                    }
                 </div>
             </div>
         </div>

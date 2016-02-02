@@ -49,9 +49,7 @@ gulp.task("minifyColourSchemeStyles", function () {
  */
 
 gulp.task("concatScripts", function() {
-    return gulp.src(["./Vendor/Bootstrap/js/alert.js",
-        "./Vendor/Bootstrap/js/dropdown.js",
-        "./Vendor/Bootstrap/js/collapse.js"])
+    return gulp.src(["./Scripts/Theme.js"])
         .pipe(concat("Site.js"))
         .pipe(gulp.dest("Scripts"));
 });

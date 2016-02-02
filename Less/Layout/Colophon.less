@@ -1,14 +1,12 @@
-﻿//
-// Footer
+//
+// Colophon
 // --------------------------------------------------
 
-.zone-footer {
+.zone-colophon {
     .make-md-column(12);
 
     font-size: @font-size-small;
     color: #9c9c9c;
-    padding-top: 24px;
-    padding-bottom: 24px;
     
     a {
         color: #d4d4d4;
@@ -19,13 +17,24 @@
     }
 }
 
-.copyright,
-.user-actions {
+.theme-by,
+.powered-by-orchard {
     .make-md-column(6);
     padding-left: 0;
     padding-right: 0;
+    border-top: 1px solid #565353;
+    padding-top: 24px;
+    padding-bottom: 24px;
 }
 
-.user-actions {
+.powered-by-orchard {
     text-align: right;
+
+    svg {
+        display: inline-block;
+        height: 20px;
+        width: 20px;
+        vertical-align: text-top;
+        fill: #9a9595;
+    }
 }

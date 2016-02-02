@@ -1,17 +1,48 @@
 ﻿//
 // Blog Archives Widget Styling
 // --------------------------------------------------
-// Includes general styling shared across all 
-// widgets. Widget styling is only applied to the
-// specific widgetised zones.
-//
-// Supported zones are FooterFirst and FooterSecond.
+// Includes styling for the blog archives widget.
 // --------------------------------------------------
 
-.footer-twins {
+.widget-blog-archives {
+    h4 {
+        font-size: @font-size-h5;
+        margin: 4px 0;
+        color: @gray;
+    }
+
+    ul.years {
+        .list-unstyled();
+
+        li > ul {
+            .list-unstyled();
+
+            li {
+                margin: 0;
+                padding: 10px 0;
+                border-bottom: 1px solid @gray-light;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+
+                a {
+                    display: block;
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+}
+
+#footer-twins {
     .widget-blog-archives {
+        li {
+            border-color: @gray;
+        }
+
         h4 {
-            font-size: 15px;
+            color: @gray-light;
         }
     }
 }

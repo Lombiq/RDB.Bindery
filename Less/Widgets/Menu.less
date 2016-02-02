@@ -1,0 +1,65 @@
+﻿//
+// Manu Widget Styling
+// --------------------------------------------------
+// Includes general styling for the menu widget,
+// styling is only applied to supported zones to
+// leave menus elewhere untouched.
+// --------------------------------------------------
+
+
+#content,
+#triples,
+#footer-twins {
+    .widget-menu-widget {
+        ul {
+            .list-unstyled();
+
+            li {
+                margin: 0;
+                padding: 10px 0;
+                border-bottom: 1px solid @gray-light;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+
+                a {
+                    display: block;
+                    font-weight: 700;
+                }
+
+                ul {
+                    margin-left: 0;                    
+                    border-top: 1px solid @gray-light;
+                    margin-bottom: 0;
+
+                    li {
+                        margin-left: 16px;
+                    }
+
+                    li:last-child {
+                        border-bottom: none;
+                        padding-bottom: 0;
+                    }
+                }
+            }
+
+            li.current > a {
+                color: @gray-darker;
+            }
+        }
+    }
+}
+
+#footer-twins {
+    .widget-menu-widget {
+        ul,
+        li {
+            border-color: @gray !important;
+        }
+
+        li.current > a {
+            color: @gray-lighter !important;
+        }
+    }
+}

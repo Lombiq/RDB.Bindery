@@ -220,12 +220,11 @@
     <Content Include="Less\ContentTypes\Page.less" />
     <Content Include="Less\Forms.less" />
     <Content Include="Less\Grid.less" />
-    <Content Include="Less\Layout\BeforeContent.less" />
     <Content Include="Less\Layout\Content.less" />
-    <Content Include="Less\Layout\Footer.less" />
+    <Content Include="Less\Layout\FooterTwins.less" />
     <Content Include="Less\Layout\Header.less" />
     <Content Include="Less\Layout\Messages.less" />
-    <Content Include="Less\Layout\SiteMeta.less" />
+    <Content Include="Less\Layout\Colophon.less" />
     <Content Include="Less\Mixins.less" />
     <Content Include="Less\Normalize.less" />
     <Content Include="Less\Pager.less" />
@@ -286,7 +285,6 @@
     <Content Include="Views\Parts\ListOfComments.cshtml" />
     <Content Include="Views\Parts\MenuWidget.cshtml" />
     <Content Include="Views\Parts\Search.SearchForm.cshtml" />
-    <Content Include="Views\Parts\Tags.ShowTags.cshtml" />
     <Content Include="Views\Parts\Title.cshtml" />
     <Content Include="Views\Parts\Title.Summary.cshtml" />
     <Content Include="Views\PoweredBy.cshtml" />
@@ -305,9 +303,6 @@
     <Content Include="Less\Close.less" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Less\Layout\AfterContent.less" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\Media.Summary.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -315,6 +310,24 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Parts\Common.Metadata.Summary.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Branding.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Less\Layout\Asides.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Less\Layout\Common.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Less\Layout\Triples.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Less\Layout\Footer.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Less\Widgets\Menu.less" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
