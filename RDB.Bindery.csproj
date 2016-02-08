@@ -72,6 +72,7 @@
     <Content Include="License.txt" />
     <Content Include="Scripts\Site.js" />
     <Content Include="Scripts\Site.min.js" />
+    <Content Include="Scripts\Theme.js" />
     <Content Include="Styles\ColourSchemes\Black.css" />
     <Content Include="Styles\ColourSchemes\Black.min.css" />
     <Content Include="Styles\ColourSchemes\Blue.css" />
@@ -261,7 +262,6 @@
     <Content Include="Views\NotFound.cshtml" />
     <Content Include="Views\Orchard.Blogs\BlogPost\ListByArchive.cshtml" />
     <Content Include="Views\Orchard.Search\Search\Index.cshtml" />
-    <Content Include="Views\Orchard.Tags\Home\Search.cshtml" />
     <Content Include="Views\Orchard.Users\Account\AccessDenied.cshtml" />
     <Content Include="Views\Orchard.Users\Account\ChallengeEmailFail.cshtml" />
     <Content Include="Views\Orchard.Users\Account\ChallengeEmailSent.cshtml" />
@@ -328,6 +328,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Less\Widgets\Menu.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Parts\Tags.ShowTags.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Orchard.Tags\Home\Search.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Less\Layout\Main.less" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

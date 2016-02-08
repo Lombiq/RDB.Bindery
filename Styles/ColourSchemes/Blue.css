@@ -1,66 +1,36 @@
 .site-header {
   background: #a0d8d5;
 }
-#site-branding a {
+#site-branding {
   color: #232929;
 }
-#site-branding a:hover {
+#site-branding:hover {
   color: #557573;
 }
-.nav-toggle span,
-.nav-toggle span:before,
-.nav-toggle span:after {
+#navigation-toggle {
+  color: #232929;
+  border-color: #232929;
+}
+#navigation-toggle:hover {
+  border-color: #557573;
+  color: #557573;
+}
+#navigation-toggle.open {
+  color: #a0d8d5;
   background: #232929;
 }
-#site-navigation a {
+.zone-navigation a {
   color: #557573;
 }
-#site-navigation a:hover {
+.zone-navigation a:hover,
+.zone-navigation li.current > a {
   color: #232929;
 }
-#site-navigation a .dd-caret {
-  border-top-color: #557573;
-}
-#site-navigation li.active > a {
-  color: #232929;
-}
-#site-navigation li.active > a .dd-caret {
-  border-top-color: #232929;
-}
-#site-navigation nav > ul > li {
-  border-bottom-color: #608a88;
-}
-#site-navigation nav > ul > li > a:hover {
-  background-color: #7aafac;
-}
-#site-navigation nav > ul > li > a:focus {
-  background-color: #8abfbc;
-}
-#site-navigation nav > ul > li.dropdown > a:hover > .dd-caret {
-  border-top-color: #232929;
-}
-#site-navigation nav > ul > li.open > a {
-  background-color: #52544e !important;
-  color: #fefefe !important;
-}
-#site-navigation nav > ul > li.open > a .dd-caret {
-  border-top-color: #fefefe !important;
-}
-#site-navigation nav > ul > li.dropdown > ul.dropdown-menu {
-  background-color: #52544e;
-}
-#site-navigation nav > ul > li.dropdown > ul.dropdown-menu a {
-  color: #cccbcb;
-}
-#site-navigation nav > ul > li.dropdown > ul.dropdown-menu > li > a:active {
-  background-color: #42443e !important;
-}
-#site-navigation nav > ul > li.dropdown > ul.dropdown-menu > li > a:hover {
-  background-color: #444640;
-}
-#site-navigation nav > ul > li.dropdown > ul.dropdown-menu > li > a:focus {
-  background-color: #383a36;
-}
-#site-navigation nav > ul > li.dropdown > ul.dropdown-menu > li.active > a {
-  background-color: #3a3c37;
+@media (min-width: 992px) {
+  .zone-navigation > nav > ul > li.dropdown > a:after {
+    border-top-color: #557573;
+  }
+  .zone-navigation > nav > ul > li.dropdown:hover > a:after {
+    border-top-color: #232929;
+  }
 }

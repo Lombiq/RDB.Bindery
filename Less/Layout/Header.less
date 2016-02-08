@@ -84,6 +84,16 @@
     }
 }
 
+.zone-navigation a {
+    color: #bfbfbf;
+    display: inline-block;
+}
+
+.zone-navigation a:hover,
+.zone-navigation li.current > a {
+    color: #fefefe;
+}
+
 // Toggle -------------------------------------------
 
 #navigation-toggle {
@@ -92,7 +102,7 @@
     border: 2px solid #fefefe;
     position: absolute;
     top: 38px;
-    right: 15px;
+    right: 15ipx;
 
     &:hover {
         border-color: #bfbfbf;
@@ -121,8 +131,6 @@
 }
 
 .zone-navigation > nav > ul > li > a {
-	color: #bfbfbf;
-    display: block;
     padding: 10px 0;
 	
     @media (min-width: @screen-md-min) { 
@@ -135,11 +143,6 @@
 
 .zone-navigation > nav > ul > li.last > a {
 	margin-right: 0;
-}
-
-.zone-navigation > nav > ul > li > a:hover,
-.zone-navigation > nav > ul > li.current > a {
-	color: #fefefe;
 }
 
 // First level menu items ---------------------------
@@ -210,23 +213,25 @@
 
 // The actual menu items.
 .zone-navigation > nav > ul > li.dropdown > ul > li > a {
-	color: #bfbfbf;
-    display: block;
     padding: 10px 0;
 
     @media (min-width: @screen-md-min) {
+        color: #bfbfbf;
         background: #303030;
 	    border-bottom: 1px solid #4a4a4a;
+        display: block;
         padding: 15px 10px;
     }
 }
 
 // Dropdown hover and current.
-.zone-navigation > nav > ul > li.dropdown > ul > li > a:hover,
-.zone-navigation > nav > ul > li.dropdown > ul > li.current > a {
-    color: #fefefe;
-}
+@media (min-width: @screen-md-min) {
+    .zone-navigation > nav > ul > li.dropdown > ul > li > a:hover,
+    .zone-navigation > nav > ul > li.dropdown > ul > li.current > a {
+        color: #fefefe;
+    }
 
-.zone-navigation > nav > ul > li.dropdown > ul > li:last-child > a {
-	border-bottom: none;
+    .zone-navigation > nav > ul > li.dropdown > ul > li:last-child > a {
+	    border-bottom: none;
+    }
 }

@@ -1,4 +1,6 @@
-﻿//
+﻿@import "../Variables.less";
+
+//
 // Blue
 // --------------------------------------------------
 // All styling for the blue colour scheme.
@@ -14,7 +16,7 @@
 
 // Branding -----------------------------------------
 
-#site-branding a {
+#site-branding {
 	color: #232929;
 	
 	&:hover {
@@ -24,89 +26,45 @@
 
 // Navigation toggle --------------------------------
 
-.nav-toggle {
-    span,
-    span:before,
-    span:after {
-        background: #232929;
-    }
-}
+// Nothing to change for this colour scheme.
 
 // Navigation ---------------------------------------
 
-#site-navigation {
-    a {
+// Toggle.
+#navigation-toggle {
+    color: #232929;
+    border-color: #232929;
+
+    &:hover {
+        border-color: #557573;
         color: #557573;
+    }
+}
 
-        &:hover {
-            color: #232929;
-        }
+#navigation-toggle.open {
+    color: #a0d8d5;
+    background: #232929;
+}
 
-        .dd-caret {
-            border-top-color: #557573;
-        }
+// Top level items.
+
+
+.zone-navigation a {
+    color: #557573;
+}
+
+.zone-navigation a:hover,
+.zone-navigation li.current > a {
+    color: #232929;
+}
+
+// First level dropdowns.
+@media (min-width: @screen-md-min) {
+    .zone-navigation > nav > ul > li.dropdown > a:after {
+        border-top-color: #557573;
     }
 
-    li.active > a {
-        color: #232929;
-
-        .dd-caret {
-            border-top-color: #232929;
-        }
-    }
-
-    nav > ul > li {
-        border-bottom-color: #608a88;
-    }
-
-    nav > ul > li > a {
-        &:hover {
-            background-color: #7aafac;
-        }
-
-        &:focus {
-            background-color: #8abfbc;
-        }
-    }
-
-    // First level dropdowns
-
-    nav > ul > li.dropdown > a:hover > .dd-caret {
+    .zone-navigation > nav > ul > li.dropdown:hover > a:after {
         border-top-color: #232929;
-    }
-
-    nav > ul > li.open > a {
-        background-color: #52544e !important;
-        color: #fefefe !important;
-        
-        .dd-caret {
-            border-top-color: #fefefe !important;
-        }
-    }
-
-    nav > ul > li.dropdown > ul.dropdown-menu {
-        background-color: #52544e;
-
-        a {
-            color: #cccbcb; // For better readability.
-        }
-    }
-
-    nav > ul > li.dropdown > ul.dropdown-menu > li > a {        
-        &:active {
-            background-color: #42443e !important;
-        }
-        
-        &:hover {
-            background-color: #444640;
-        }
-        
-        &:focus {
-            background-color: #383a36;
-        }
-    }
-
-    nav > ul > li.dropdown > ul.dropdown-menu > li.active > a {
-        background-color: #3a3c37;
     }
 }
