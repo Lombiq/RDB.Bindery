@@ -25,23 +25,23 @@ gulp.task("minifyStyles", function() {
         .pipe(gulp.dest("Styles"));
 });
 
-gulp.task("buildColourSchemeLess", function() {
-    return gulp.src(["./Less/ColourSchemes/*.less"])
+gulp.task("buildColorSchemeLess", function() {
+    return gulp.src(["./Less/ColorSchemes/*.less"])
         .pipe(less())
-        .pipe(gulp.dest("Styles/ColourSchemes"));
+        .pipe(gulp.dest("Styles/ColorSchemes"));
 });
 
-gulp.task("minifyColourSchemeStyles", function () {
-    return gulp.src(["./Styles/ColourSchemes/Black.css",
-        "./Styles/ColourSchemes/Blue.css",
-        "./Styles/ColourSchemes/Green.css",
-        "./Styles/ColourSchemes/Grey.css",
-        "./Styles/ColourSchemes/White.css"])
+gulp.task("minifyColorSchemeStyles", function () {
+    return gulp.src(["./Styles/ColorSchemes/Black.css",
+        "./Styles/ColorSchemes/Blue.css",
+        "./Styles/ColorSchemes/Green.css",
+        "./Styles/ColorSchemes/Grey.css",
+        "./Styles/ColorSchemes/White.css"])
         .pipe(minify())
         .pipe(rename({
             extname: ".min.css"
         }))
-        .pipe(gulp.dest("Styles/ColourSchemes"));
+        .pipe(gulp.dest("Styles/ColorSchemes"));
 });
 
 /*
@@ -74,7 +74,7 @@ gulp.task("default", function(callback) {
         "minifyScripts");
 });
 
-gulp.task("colourSchemes", function(callback) {
-    runSequence("buildColourSchemeLess",
-        "minifyColourSchemeStyles");
+gulp.task("colorSchemes", function(callback) {
+    runSequence("buildColorSchemeLess",
+        "minifyColorSchemeStyles");
 });
