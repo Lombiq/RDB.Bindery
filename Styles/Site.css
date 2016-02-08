@@ -1928,38 +1928,6 @@ table th {
 .field-validation-error .alert-link {
   color: #843534;
 }
-.close {
-  float: right;
-  font-size: 25.5px;
-  font-weight: bold;
-  line-height: 1;
-  color: #212121;
-  text-shadow: 0 1px 0 #fff;
-  opacity: 0.2;
-  filter: alpha(opacity=20);
-}
-.close:hover,
-.close:focus {
-  color: #212121;
-  text-decoration: none;
-  cursor: pointer;
-  opacity: 0.5;
-  filter: alpha(opacity=50);
-}
-button.close {
-  padding: 0;
-  cursor: pointer;
-  background: transparent;
-  border: 0;
-  -webkit-appearance: none;
-}
-.close {
-  outline: none !important;
-}
-.close:active {
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
 fieldset {
   padding: 0;
   margin: 0;
@@ -3748,7 +3716,7 @@ input[type="submit"] .badge {
   border: 2px solid #fefefe;
   position: absolute;
   top: 38px;
-  right: 15px;
+  right: 15ipx;
 }
 #navigation-toggle:hover {
   border-color: #bfbfbf;
