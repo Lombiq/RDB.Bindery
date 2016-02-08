@@ -102,11 +102,15 @@
     border: 2px solid #fefefe;
     position: absolute;
     top: 38px;
-    right: 15ipx;
+    right: 15px;
 
     &:hover {
         border-color: #bfbfbf;
         color: #bfbfbf;
+    }
+
+    @media (min-width: @screen-sm-min) {
+        right: 60px;
     }
 
     @media (min-width: @screen-md-min) {

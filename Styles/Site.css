@@ -3520,11 +3520,16 @@ input[type="submit"] .badge {
   border: 2px solid #fefefe;
   position: absolute;
   top: 38px;
-  right: 15ipx;
+  right: 15px;
 }
 #navigation-toggle:hover {
   border-color: #bfbfbf;
   color: #bfbfbf;
+}
+@media (min-width: 768px) {
+  #navigation-toggle {
+    right: 60px;
+  }
 }
 @media (min-width: 992px) {
   #navigation-toggle {
