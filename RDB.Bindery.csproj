@@ -300,9 +300,6 @@
     <Content Include="Less\Alerts.less" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Less\Close.less" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\Media.Summary.cshtml" />
   </ItemGroup>
   <ItemGroup>

@@ -127,26 +127,29 @@
         </div>
     </div>
 
-    <div id="triples">
-        <div class="container">
-            <div class="row">
-                @if (Model.TripleFirst != null) 
-                {
-                    @Display(Model.TripleFirst)
-                }
+    @if (Model.TripleFirst != null || Model.TripleSecond != null || Model.TripleThird != null) 
+    {
+        <div id="triples">
+            <div class="container">
+                <div class="row">
+                    @if (Model.TripleFirst != null) 
+                    {
+                        @Display(Model.TripleFirst)
+                    }
 
-                @if (Model.TripleSecond != null)
-                {
-                    @Display(Model.TripleSecond)
-                }
+                    @if (Model.TripleSecond != null) 
+                    {
+                        @Display(Model.TripleSecond)
+                    }
 
-                @if (Model.TripleThird != null)
-                {
-                    @Display(Model.TripleThird)
-                }
+                    @if (Model.TripleThird != null) 
+                    {
+                        @Display(Model.TripleThird)
+                    }
+                </div>
             </div>
         </div>
-    </div>
+    }
 
     <footer id="colophon" class="site-footer" role="contentinfo">
         @if (Model.FooterTwinsFirst != null || Model.FooterTwinsSecond != null)

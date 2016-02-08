@@ -49,7 +49,8 @@ gulp.task("minifyColorSchemeStyles", function () {
  */
 
 gulp.task("concatScripts", function() {
-    return gulp.src(["./Scripts/Theme.js"])
+    return gulp.src(["./Vendor/DoubletapToGo/doubletaptogo.js",
+        "./Scripts/Theme.js"])
         .pipe(concat("Site.js"))
         .pipe(gulp.dest("Scripts"));
 });
