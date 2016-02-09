@@ -67,7 +67,6 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Gallery.png" />
     <Content Include="gulpfile.js" />
     <Content Include="License.txt" />
     <Content Include="Scripts\Site.js" />
