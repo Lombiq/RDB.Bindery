@@ -1,0 +1,49 @@
+﻿//
+// Triples
+// --------------------------------------------------
+
+#triples {
+    background: #f0f0f0;
+    border-top: 1px solid #e8e8e8;
+    padding: 42px 0;
+}
+
+#triples .zone {
+    margin-bottom: 38px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    @media (min-width: @screen-md-min) {
+        margin-bottom: 0;
+    }
+}
+
+.triple-1,
+.triple-2,
+.triple-3 {
+    .zone-triple-first,
+    .zone-triple-second,
+    .zone-triple-third {
+        .make-md-column(12);
+    }
+}
+
+.triple-12,
+.triple-13,
+.triple-23 {
+    .zone-triple-first,
+    .zone-triple-second,
+    .zone-triple-third {
+        .make-md-column(6);
+    }
+}
+
+.triple-123 {
+    .zone-triple-first,
+    .zone-triple-second,
+    .zone-triple-third {
+        .make-md-column(4);
+    }
+}

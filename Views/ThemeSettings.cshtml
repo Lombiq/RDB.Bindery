@@ -3,10 +3,10 @@
 
 @{
     var settings = WorkContext.CurrentSite.As<BinderyThemeSettingsPart>();
-    var selectColourScheme = settings.SelectedColourScheme;
+    var selectColorScheme = settings.SelectedColorScheme;
 
-    if (selectColourScheme != "Default") 
+    if (selectColorScheme != "Default") 
     {
-        Style.Include(String.Format("ColourSchemes/{0}.min.css", selectColourScheme));
+        Style.Include(String.Format("ColorSchemes/{0}.min.css", selectColorScheme));
     }
 }

@@ -11,7 +11,7 @@ namespace RDB.Bindery.Models
         {
             T = NullLocalizer.Instance;
 
-            _colourSchemes = new List<SelectListItem> {
+            _colorSchemes = new List<SelectListItem> {
                 new SelectListItem {
                     Text = T("Default").Text,
                     Value = "Default"
@@ -41,17 +41,17 @@ namespace RDB.Bindery.Models
 
         public Localizer T { get; set; }
 
-        private readonly IEnumerable<SelectListItem> _colourSchemes;
+        private readonly IEnumerable<SelectListItem> _colorSchemes;
 
-        public string SelectedColourScheme
+        public string SelectedColorScheme
         {
-            get { return this.Retrieve(x => x.SelectedColourScheme) ?? "Default"; }
-            set { this.Store(x => x.SelectedColourScheme, value); }
+            get { return this.Retrieve(x => x.SelectedColorScheme) ?? "Default"; }
+            set { this.Store(x => x.SelectedColorScheme, value); }
         }
 
-        public IEnumerable<SelectListItem> ColourSchemes
+        public IEnumerable<SelectListItem> ColorSchemes
         {
-            get { return _colourSchemes; }
+            get { return _colorSchemes; }
         }
     }
 }

@@ -6,34 +6,25 @@
 //
 // Table of Contents
 // ==================================================
-// 01	Brand colours
+// 01	Site colors
 // 02	Scaffolding
-// 03	Z-index master list
-// 04	Components
-// 05	Media queries breakpoints
-// 06	Grid system
-// 07	Container sizes
-// 08	Typography
-// 09	Code
-// 10	Tables
-// 11	Forms
-// 12	Form states and alerts
-// 13	Labels
-// 14	Alerts
-// 15	Buttons
-// 16	Dropdowns
-// 17	Navs
-// 18	Pagination
-// 19	Pager
-// 20	Thumbnails
-// 21   Close
+// 03	Components
+// 04	Media queries breakpoints
+// 05	Grid system
+// 06	Container sizes
+// 07	Typography
+// 08	Code
+// 09	Tables
+// 10	Forms
+// 11	Form states and alerts
+// 12	Labels
+// 13	Alerts
+// 14	Buttons
+// 15	Thumbnails
 // ==================================================
 
 //
-// Site Variables
-// ==================================================
-
-// 01	Brand colours
+// 01	Site colors
 // ==================================================
 
 @gray-base: #000;
@@ -61,23 +52,7 @@
 @link-hover-decoration: none;
 
 
-// 03	Z-index master list
-// ==================================================
-// Warning: Avoid customizing these values. They`re used for a bird`s eye view
-// of components dependent on the z-axis and are designed to all work together.
-//
-// Note: These variables are not generated into the Customizer.
-
-@zindex-navbar: 1000;
-@zindex-dropdown: 1000;
-@zindex-popover: 1060;
-@zindex-tooltip: 1070;
-@zindex-navbar-fixed: 1030;
-@zindex-modal-background: 1040;
-@zindex-modal: 1050;
-
-
-// 04	Components
+// 03	Components
 // ==================================================
 // Define common padding and border radius sizes and 
 // more. Values based on 14px text and 1.428 line-height 
@@ -99,8 +74,8 @@
 @line-height-small: 1.5;
 
 @border-radius-base: 0;
-@border-radius-large: 6px;
-@border-radius-small: 3px;
+@border-radius-large: 0;
+@border-radius-small: 0;
 
 // Global color and background colour for active items (e.g., navs or dropdowns).
 @component-active-color: #fff;
@@ -111,7 +86,7 @@
 @caret-width-large: 5px;
 
 
-// 05	Media queries breakpoints
+// 04	Media queries breakpoints
 // ==================================================
 // Define the breakpoints at which your layout will 
 // change, adapting to different screen sizes.
@@ -150,10 +125,7 @@
 @screen-md-max:              (@screen-lg-min - 1);
 
 
-
-
-
-// 06	Grid system
+// 05	Grid system
 // ==================================================
 // Define your custom responsive grid.
 
@@ -170,7 +142,7 @@
 @grid-float-breakpoint-max: (@grid-float-breakpoint - 1);
 
 
-// 07	Container sizes
+// 06	Container sizes
 // ==================================================
 // Define the maximum width of `.container` for 
 // different screen sizes.
@@ -194,12 +166,12 @@
 // Large screen/wide desktop
 // --------------------------------------------------
 
-@container-large-desktop: (840px + @grid-gutter-width);
+@container-large-desktop: (1000px + @grid-gutter-width);
 //** For `@screen-lg-min` and up.
 @container-lg: @container-large-desktop;
 
 
-// 08	Typography
+// 07	Typography
 // ==================================================
 // Font, line-height, and color for body text, headings, and more.
 
@@ -258,7 +230,7 @@
 @hr-border: @gray-lighter;
 
 
-// 09	Code
+// 08	Code
 // ==================================================
 
 @code-color: #c7254e;
@@ -273,7 +245,7 @@
 @pre-scrollable-max-height: 340px;
 
 
-// 10	Tables
+// 09	Tables
 // ==================================================
 // Customizes the `.table` component with basic values, 
 // each used across all table variations.
@@ -295,7 +267,7 @@
 @table-border-color: #ddd;
 
 
-// 11	Forms
+// 10	Forms
 // ==================================================
 
 // `<input>` background color
@@ -345,7 +317,7 @@
 @cursor-disabled: not-allowed;
 
 
-// 12	Form states and alerts
+// 11	Form states and alerts
 // ==================================================
 // Define colors for form feedback states and, by 
 // default, alerts.
@@ -367,7 +339,7 @@
 @state-danger-border: darken(spin(@state-danger-bg, -10), 5%);
 
 
-// 13	Labels
+// 12	Labels
 // ==================================================
 
 // Default label background color.
@@ -389,7 +361,7 @@
 @label-link-hover-color: #fff;
 
 
-// 14	Alerts
+// 13	Alerts
 // ==================================================
 // Define alert colors, border radius and padding.
 
@@ -414,7 +386,7 @@
 @alert-danger-border: @state-danger-border;
 
 
-// 15	Buttons
+// 14	Buttons
 // ==================================================
 // For each of Bootstrap`s buttons, define text, 
 // background and border color.
@@ -447,93 +419,13 @@
 
 @btn-link-disabled-color: @gray-light;
 
-// Allows for customizing button radius independently from global border radius
+// Allows for customizing button radius independently from global border radius.
 @btn-border-radius-base: @border-radius-base;
 @btn-border-radius-large: @border-radius-large;
 @btn-border-radius-small: @border-radius-small;
 
 
-// 16	Dropdowns
-// ==================================================
-// Dropdown menu container and contents.
-
-// Background for the dropdown menu.
-@dropdown-bg: #fff;
-// Dropdown menu `border-color`.
-@dropdown-border: rgba(0,0,0,.15);
-// Dropdown menu `border-color` for IE8.
-@dropdown-fallback-border: #ccc;
-// Divider color for between dropdown items.
-@dropdown-divider-bg: #e5e5e5;
-
-// Dropdown link text color.
-@dropdown-link-color: @gray-dark;
-// Hover color for dropdown links.
-@dropdown-link-hover-color: darken(@gray-dark, 5%);
-// Hover background for dropdown links.
-@dropdown-link-hover-bg: #f5f5f5;
-
-// Active dropdown menu item text color.
-@dropdown-link-active-color: @component-active-color;
-// Active dropdown menu item background color.
-@dropdown-link-active-bg: @component-active-bg;
-
-// Disabled dropdown menu item background color.
-@dropdown-link-disabled-color: @gray-light;
-
-// Text color for headers within dropdown menus.
-@dropdown-header-color: @gray-light;
-
-
-// 17	Navs
-// ==================================================
-
-// Shared nav styles
-// --------------------------------------------------
-
-@nav-link-padding: 10px 15px;
-@nav-link-hover-bg: @gray-lighter;
-
-@nav-disabled-link-color: @gray-light;
-@nav-disabled-link-hover-color: @gray-light;
-
-
-// 18	Pagination
-// --------------------------------------------------
-
-@pagination-color: #222;
-@pagination-bg: #e8e8e8;
-@pagination-border: #e8e8e8;
-
-@pagination-hover-color: @link-hover-color;
-@pagination-hover-bg: @gray-lighter;
-@pagination-hover-border: #ddd;
-
-@pagination-active-color: #fff;
-@pagination-active-bg: @brand-primary;
-@pagination-active-border: @brand-primary;
-
-@pagination-disabled-color: @gray-light;
-@pagination-disabled-bg: #fff;
-@pagination-disabled-border: #ddd;
-
-
-// 19	Pager
-// ==================================================
-
-@pager-bg: @pagination-bg;
-@pager-border: @pagination-border;
-@pager-border-radius: 15px;
-
-@pager-hover-bg: @pagination-hover-bg;
-
-@pager-active-bg: @pagination-active-bg;
-@pager-active-color: @pagination-active-color;
-
-@pager-disabled-color: @pagination-disabled-color;
-
-
-// 20	Thumbnails
+// 15	Thumbnails
 // ==================================================
 
 // Padding around the thumbnail image.
@@ -549,11 +441,3 @@
 @thumbnail-caption-color: @text-color;
 // Padding around the thumbnail caption.
 @thumbnail-caption-padding: 9px;
-
-
-// 21	Close
-// ==================================================
-
-@close-font-weight: bold;
-@close-color: #212121;
-@close-text-shadow: 0 1px 0 #fff;

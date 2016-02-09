@@ -1,0 +1,61 @@
+//
+// Colophon
+// --------------------------------------------------
+
+#colophon {
+    border-top: 1px solid #222;
+}
+
+.zone-colophon {
+    .make-md-column(12);
+
+    font-size: @font-size-small;
+    color: #9c9c9c;
+    
+    a {
+        color: #d4d4d4;
+
+        &:hover {
+            color: #fefefe;
+        }
+    }
+}
+
+.theme-by,
+.powered-by-orchard {
+    .make-md-column(6);
+    padding-left: 0;
+    padding-right: 0;
+    border-top: 1px solid #565353;
+    line-height: 1.8;
+}
+
+.theme-by {
+    text-align: center;
+    padding-top: 24px;
+
+    @media (min-width: @screen-md-min) { 
+        text-align: left;
+        padding-bottom: 24px;
+    }
+}
+
+.powered-by-orchard {
+    border-top: none;
+    text-align: center;
+    padding-bottom: 24px;
+
+    svg {
+        display: inline-block;
+        height: 20px;
+        width: 20px;
+        vertical-align: text-top;
+        fill: #9a9595;
+    }
+
+    @media (min-width: @screen-md-min) { 
+        border-top: 1px solid #565353;
+        text-align: right;
+        padding-top: 24px;
+    }
+}

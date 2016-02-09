@@ -1,31 +1,57 @@
 ﻿//
 // Recent Blog Posts Widget
 // --------------------------------------------------
-// Includes styling for the search widget. This does 
-// not include the search area.
-//
-// Supported zones are FooterFirst and FooterSecond.
+// Includes styling for the recent blog posts
+// widget.
 // --------------------------------------------------
 
-.footer-twins {
-    .widget-recent-blog-posts {
-        .recent-blog-posts-list {
-            margin-bottom: 0;
+.widget-recent-blog-posts {
+     .recent-blog-posts-list {
+        .list-unstyled();
 
-            li {
-                margin: 0;
+        li {
+            margin: 0;
+            padding: 10px 0;
+            border-bottom: 1px solid @gray-light;
+
+            &:last-child {
+                margin-bottom: 0;
             }
 
             a {
+                font-weight: 700;
                 display: block;
-                border-bottom: 1px solid #616567;
-                padding: 7px 0;
             }
+        }
 
-            .published {
-                display: block;
-                color: #bfbfbf;
-            }
+        .published {
+            display: block;
+            color: @gray;
+            font-weight: normal;
+        }
+    }
+}
+
+#triples {
+    .widget-recent-blog-posts {
+        li {
+            border-color: #c7c7c7;
+        }
+
+        .published {
+            color: @gray;
+        }
+    }
+}
+
+#footer-twins {
+    .widget-recent-blog-posts {
+        li {
+            border-color: @gray;
+        }
+
+        .published {
+            color: @gray-light;
         }
     }
 }

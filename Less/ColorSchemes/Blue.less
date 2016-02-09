@@ -1,0 +1,64 @@
+﻿@import "../Variables.less";
+
+//
+// Blue
+// --------------------------------------------------
+// All styling for the blue color scheme.
+// --------------------------------------------------
+
+//
+// Site Header
+// --------------------------------------------------
+
+.site-header {
+    background: #a0d8d5;
+}
+
+// Branding -----------------------------------------
+
+#site-branding {
+    color: #232929;
+	
+    &:hover {
+        color: #557573;
+    }
+}
+
+// Navigation toggle --------------------------------
+
+#navigation-toggle {
+    color: #232929;
+    border-color: #232929;
+
+    &:hover {
+        border-color: #557573;
+        color: #557573;
+    }
+}
+
+#navigation-toggle.open {
+    color: #a0d8d5;
+    background: #232929;
+}
+
+// Navigation ---------------------------------------
+
+.zone-navigation a {
+    color: #557573;
+}
+
+.zone-navigation a:hover,
+.zone-navigation li.current > a {
+    color: #232929;
+}
+
+// First level dropdowns.
+@media (min-width: @screen-md-min) {
+    .zone-navigation > nav > ul > li.dropdown > a:after {
+        border-top-color: #557573;
+    }
+
+    .zone-navigation > nav > ul > li.dropdown:hover > a:after {
+        border-top-color: #232929;
+    }
+}

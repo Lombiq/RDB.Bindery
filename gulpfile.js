@@ -11,13 +11,15 @@ var gulp = require("gulp"),
  */
 
 gulp.task("buildLess", function() {
-    return gulp.src("./Less/Site.less")
+    return gulp.src(["./Less/Site.less",
+        "./Less/Rtl.less"])
         .pipe(less())
         .pipe(gulp.dest("Styles"));
 });
 
 gulp.task("minifyStyles", function() {
-    return gulp.src("./Styles/Site.css")
+    return gulp.src(["./Styles/Site.css",
+        "./Styles/Rtl.css"])
         .pipe(minify())
         .pipe(rename({
             extname: ".min.css"
@@ -25,23 +27,23 @@ gulp.task("minifyStyles", function() {
         .pipe(gulp.dest("Styles"));
 });
 
-gulp.task("buildColourSchemeLess", function() {
-    return gulp.src(["./Less/ColourSchemes/*.less"])
+gulp.task("buildColorSchemeLess", function() {
+    return gulp.src(["./Less/ColorSchemes/*.less"])
         .pipe(less())
-        .pipe(gulp.dest("Styles/ColourSchemes"));
+        .pipe(gulp.dest("Styles/ColorSchemes"));
 });
 
-gulp.task("minifyColourSchemeStyles", function () {
-    return gulp.src(["./Styles/ColourSchemes/Black.css",
-        "./Styles/ColourSchemes/Blue.css",
-        "./Styles/ColourSchemes/Green.css",
-        "./Styles/ColourSchemes/Grey.css",
-        "./Styles/ColourSchemes/White.css"])
+gulp.task("minifyColorSchemeStyles", function () {
+    return gulp.src(["./Styles/ColorSchemes/Black.css",
+        "./Styles/ColorSchemes/Blue.css",
+        "./Styles/ColorSchemes/Green.css",
+        "./Styles/ColorSchemes/Grey.css",
+        "./Styles/ColorSchemes/White.css"])
         .pipe(minify())
         .pipe(rename({
             extname: ".min.css"
         }))
-        .pipe(gulp.dest("Styles/ColourSchemes"));
+        .pipe(gulp.dest("Styles/ColorSchemes"));
 });
 
 /*
@@ -49,9 +51,8 @@ gulp.task("minifyColourSchemeStyles", function () {
  */
 
 gulp.task("concatScripts", function() {
-    return gulp.src(["./Vendor/Bootstrap/js/alert.js",
-        "./Vendor/Bootstrap/js/dropdown.js",
-        "./Vendor/Bootstrap/js/collapse.js"])
+    return gulp.src(["./Vendor/DoubletapToGo/doubletaptogo.js",
+        "./Scripts/Theme.js"])
         .pipe(concat("Site.js"))
         .pipe(gulp.dest("Scripts"));
 });
@@ -76,7 +77,7 @@ gulp.task("default", function(callback) {
         "minifyScripts");
 });
 
-gulp.task("colourSchemes", function(callback) {
-    runSequence("buildColourSchemeLess",
-        "minifyColourSchemeStyles");
+gulp.task("colorSchemes", function(callback) {
+    runSequence("buildColorSchemeLess",
+        "minifyColorSchemeStyles");
 });

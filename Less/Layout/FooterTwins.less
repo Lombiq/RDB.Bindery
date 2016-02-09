@@ -1,0 +1,47 @@
+//
+// Footer Twins
+// --------------------------------------------------
+
+#footer-twins {
+    background: #313638;
+    color: #bfbfbf;
+    font-size: @font-size-small;
+    padding: 42px 0;
+
+    a {
+        color: #d3e0ff;
+
+        &:hover {
+            color: #fefefe;
+        }
+    }
+}
+
+// Collapsible zones -------------------------------- 
+
+.footer-twins-1,
+.footer-twins-2 {
+    .zone-footer-twins-first,
+    .zone-footer-twins-second {
+        .make-md-column(12);
+    }
+}
+
+.footer-twins-12 {
+    .zone-footer-twins-first {
+        .make-md-column(4);
+
+        @media (min-width: @screen-md-min) {
+            margin-bottom: 0;
+        }
+    }
+
+    .zone-footer-twins-second {
+        .make-md-column(8);
+        margin-bottom: 38px;
+
+        @media (min-width: @screen-md-min) {
+            float: right;
+        }
+    }
+}
