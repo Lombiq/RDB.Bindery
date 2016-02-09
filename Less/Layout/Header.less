@@ -3,8 +3,8 @@
 // --------------------------------------------------
 
 .site-header {
-	background: #444C4E;
-	padding: 45px 0;
+    background: #444c4e;
+    padding: 45px 0;
     
     @media (min-width: @screen-md-min) { 
         padding-right: 0;
@@ -19,16 +19,16 @@
 // Branding -----------------------------------------
 
 #site-branding {
-	color: #fefefe;
+    color: #fefefe;
     display: block;
-	font-weight: 700;
-	font-size: 24px;
+    font-weight: 700;
+    font-size: 24px;
     padding-right: 84px;
 	
-	&:hover {
-		color: #bbb;
-		text-decoration: none;
-	}
+    &:hover {
+        color: #bbb;
+        text-decoration: none;
+    }
 
     @media (min-width: @screen-md-min) { 
         padding-right: 0;
@@ -63,13 +63,13 @@
 // Reset all navigation lists.
 
 .zone-navigation ul {
-	list-style: none;
+    list-style: none;
 }
 
 .zone-navigation ul,
 .zone-navigation ul li {
-	margin: 0;
-	padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 // Align the navigation to the right of the site header. 
@@ -119,7 +119,7 @@
 }
 
 #navigation-toggle.open {
-    color: #444C4E;
+    color: #444c4e;
     background: #fefefe;
 }
 
@@ -129,8 +129,8 @@
     display: block;
 
     @media (min-width: @screen-md-min) { 
-	    display: inline-block;
-	    position: relative;
+        display: inline-block;
+        position: relative;
     }
 }
 
@@ -138,7 +138,7 @@
     padding: 10px 0;
 	
     @media (min-width: @screen-md-min) { 
-	    display: inline-block;
+        display: inline-block;
         line-height: 33px; // Vertically aligns the menu items with the site title.
         margin-right: 18px;
         padding: 0;
@@ -146,7 +146,7 @@
 }
 
 .zone-navigation > nav > ul > li.last > a {
-	margin-right: 0;
+    margin-right: 0;
 }
 
 // First level menu items ---------------------------
@@ -174,44 +174,44 @@
     margin-left: 35px;
 
     @media (min-width: @screen-md-min) { 
-	    float: left;
-	    left: -999999%;
-	    width: 220px;
+        float: left;
+        left: -999999%;
+        width: 220px;
         padding-top: 30px;
         position: absolute;
         text-align: center;
         top: 100%;
         z-index: 9999;
 
-	    // Hide the dropdown menu, move position off screen
+        // Hide the dropdown menu, move position off screen
         // so the element is still avalible for screen readers.
-	    margin-left: -110px;
+        margin-left: -110px;
         opacity: 0;
         transition: 0.25s all ease-in-out;
-	    transition-property: opacity, padding-top;
+        transition-property: opacity, padding-top;
     }
 }
 
 @media (min-width: @screen-md-min) {
     // Show the dropdown menu when the user hovers over the parent item.
     .zone-navigation > nav > ul > li.dropdown:hover > ul {
-	    left: 50%;
-	    padding-top: 10px;
-	    opacity: 1;
+        left: 50%;
+        padding-top: 10px;
+        opacity: 1;
     }
 
     // Adds the triangle to the top of the dropdown on larger displays.
     .zone-navigation > nav > ul > li.dropdown > ul > li:first-child:before {
-	    content: " ";
-	    display: block;
-	    position: relative;
-	    top: 0;
-	    left: 50%;
-	    margin-left: -10px;
-	    border-bottom: 10px solid #303030;
-	    border-left: 10px solid transparent;
-	    border-right: 10px solid transparent;
-	    width: 10px;
+        content: " ";
+        display: block;
+        position: relative;
+        top: 0;
+        left: 50%;
+        margin-left: -10px;
+        border-bottom: 10px solid #303030;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        width: 10px;
     }
 }
 
@@ -222,7 +222,7 @@
     @media (min-width: @screen-md-min) {
         color: #bfbfbf;
         background: #303030;
-	    border-bottom: 1px solid #4a4a4a;
+        border-bottom: 1px solid #4a4a4a;
         display: block;
         padding: 15px 10px;
     }
@@ -236,6 +236,6 @@
     }
 
     .zone-navigation > nav > ul > li.dropdown > ul > li:last-child > a {
-	    border-bottom: none;
+        border-bottom: none;
     }
 }

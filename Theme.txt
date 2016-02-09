@@ -3,4 +3,4 @@ Author: Ryan Drew Burnett
 Website: http://rdb.me
 Description: Content is at the heart of any website - Bindery's muted styling is the perfect backdrop for your writing. This flexible theme with uncomplicated typography will provide an effortless reading experience for your audience.
 Version: 1.1.0
-Zones: Header, Navigation, BeforeMain, AsideFirst, Messages, BeforeContent, Content, AfterContent, AsideSecond, AfterMain, TripleFirst, TripleSecond, TripleThird, FooterTwinsSecond, FooterTwinsFirst, Footer, Colophon
+Zones: Header, Navigation, BeforeMain, AsideFirst, Messages, BeforeContent, Content, AfterContent, AsideSecond, AfterMain, TripleFirst, TripleSecond, TripleThird, FooterTwinsFirst, FooterTwinsSecond, Footer, Colophon

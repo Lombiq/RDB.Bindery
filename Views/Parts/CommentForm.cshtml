@@ -17,7 +17,7 @@
 else if ((settings.MustBeAuthenticated || !isAuthorized) && WorkContext.CurrentUser == null) 
 {
     <p class="alert-comments alert-info alert">@T("You must {0} to comment.", Html.ActionLink(T("log on").ToString(), "LogOn",
-                            new { Controller = "Account", Area = "Orchard.Users", ReturnUrl = string.Format("{0}#addacomment", Context.Request.RawUrl) }))</p>
+        new { Controller = "Account", Area = "Orchard.Users", ReturnUrl = string.Format("{0}#addacomment", Context.Request.RawUrl) }))</p>
 }
 else if (WorkContext.CurrentUser != null && !isAuthorized) 
 {
@@ -28,14 +28,18 @@ else if (isAuthorized)
     @Html.ValidationSummary() 
     <span id="comment-form-beacon"></span>
     
-    using (Html.BeginFormAntiForgeryPost(Url.Action("Create", "Comment", new { Area = "Orchard.Comments", ReturnUrl = Context.Request.ToUrlString() }), FormMethod.Post, new { @class = "comment-form" })) {
-        if (TempData.ContainsKey("Comments.InvalidCommentEditorShape")) {
+    using (Html.BeginFormAntiForgeryPost(Url.Action("Create", "Comment", 
+        new { Area = "Orchard.Comments", ReturnUrl = Context.Request.ToUrlString() }), FormMethod.Post, new { @class = "comment-form" })) {
+        
+        if (TempData.ContainsKey("Comments.InvalidCommentEditorShape")) 
+        {
             @Display(TempData["Comments.InvalidCommentEditorShape"]);
         }
-        else {
+        else 
+        {
             @Display(Model.EditorShape)
         }
+    
         <button class="btn btn-primary" type="submit">@T("Submit Comment")</button>
     }
-
 }
