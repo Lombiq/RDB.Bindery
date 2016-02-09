@@ -67,21 +67,23 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Gallery.png" />
     <Content Include="gulpfile.js" />
     <Content Include="License.txt" />
     <Content Include="Scripts\Site.js" />
     <Content Include="Scripts\Site.min.js" />
-    <Content Include="Styles\ColourSchemes\Black.css" />
-    <Content Include="Styles\ColourSchemes\Black.min.css" />
-    <Content Include="Styles\ColourSchemes\Blue.css" />
-    <Content Include="Styles\ColourSchemes\Blue.min.css" />
-    <Content Include="Styles\ColourSchemes\Green.css" />
-    <Content Include="Styles\ColourSchemes\Green.min.css" />
-    <Content Include="Styles\ColourSchemes\Grey.css" />
-    <Content Include="Styles\ColourSchemes\Grey.min.css" />
-    <Content Include="Styles\ColourSchemes\White.css" />
-    <Content Include="Styles\ColourSchemes\White.min.css" />
+    <Content Include="Scripts\Theme.js" />
+    <Content Include="Styles\ColorSchemes\Black.css" />
+    <Content Include="Styles\ColorSchemes\Black.min.css" />
+    <Content Include="Styles\ColorSchemes\Blue.css" />
+    <Content Include="Styles\ColorSchemes\Blue.min.css" />
+    <Content Include="Styles\ColorSchemes\Green.css" />
+    <Content Include="Styles\ColorSchemes\Green.min.css" />
+    <Content Include="Styles\ColorSchemes\Grey.css" />
+    <Content Include="Styles\ColorSchemes\Grey.min.css" />
+    <Content Include="Styles\ColorSchemes\White.css" />
+    <Content Include="Styles\ColorSchemes\White.min.css" />
+    <Content Include="Styles\Rtl.css" />
+    <Content Include="Styles\Rtl.min.css" />
     <Content Include="Styles\Site.css" />
     <Content Include="Styles\Site.min.css" />
     <Content Include="Vendor\Bootstrap\fonts\glyphicons-halflings-regular.svg" />
@@ -100,6 +102,7 @@
     <Content Include="Vendor\Bootstrap\js\tab.js" />
     <Content Include="Vendor\Bootstrap\js\tooltip.js" />
     <Content Include="Vendor\Bootstrap\js\transition.js" />
+    <Content Include="Vendor\DoubletapToGo\doubletaptogo.js" />
     <Content Include="Web.config" />
     <Content Include="Scripts\Web.config" />
     <Content Include="Styles\Web.config" />
@@ -205,11 +208,11 @@
     <Content Include="Less\Areas\Users.less" />
     <Content Include="Less\Buttons.less" />
     <Content Include="Less\Code.less" />
-    <Content Include="Less\ColourSchemes\Black.less" />
-    <Content Include="Less\ColourSchemes\Blue.less" />
-    <Content Include="Less\ColourSchemes\Green.less" />
-    <Content Include="Less\ColourSchemes\Grey.less" />
-    <Content Include="Less\ColourSchemes\White.less" />
+    <Content Include="Less\ColorSchemes\Black.less" />
+    <Content Include="Less\ColorSchemes\Blue.less" />
+    <Content Include="Less\ColorSchemes\Green.less" />
+    <Content Include="Less\ColorSchemes\Grey.less" />
+    <Content Include="Less\ColorSchemes\White.less" />
     <Content Include="Less\ContentParts\Body.less" />
     <Content Include="Less\ContentParts\Comments.less" />
     <Content Include="Less\ContentParts\Layout.less" />
@@ -220,14 +223,12 @@
     <Content Include="Less\ContentTypes\Page.less" />
     <Content Include="Less\Forms.less" />
     <Content Include="Less\Grid.less" />
-    <Content Include="Less\Layout\BeforeContent.less" />
     <Content Include="Less\Layout\Content.less" />
-    <Content Include="Less\Layout\Footer.less" />
+    <Content Include="Less\Layout\FooterTwins.less" />
     <Content Include="Less\Layout\Header.less" />
     <Content Include="Less\Layout\Messages.less" />
-    <Content Include="Less\Layout\SiteMeta.less" />
+    <Content Include="Less\Layout\Colophon.less" />
     <Content Include="Less\Mixins.less" />
-    <Content Include="Less\Navs.less" />
     <Content Include="Less\Normalize.less" />
     <Content Include="Less\Pager.less" />
     <Content Include="Less\Scaffolding.less" />
@@ -259,14 +260,10 @@
     <Content Include="Views\Fields\TaxonomyField.cshtml" />
     <Content Include="Views\Layout.cshtml" />
     <Content Include="Views\LogOn.cshtml" />
-    <Content Include="Views\Menu-Main-Menu.cshtml" />
-    <Content Include="Views\MenuItem-Main-Menu.cshtml" />
-    <Content Include="Views\MenuItemLinkDropdown.cshtml" />
     <Content Include="Views\Message.cshtml" />
     <Content Include="Views\NotFound.cshtml" />
     <Content Include="Views\Orchard.Blogs\BlogPost\ListByArchive.cshtml" />
     <Content Include="Views\Orchard.Search\Search\Index.cshtml" />
-    <Content Include="Views\Orchard.Tags\Home\Search.cshtml" />
     <Content Include="Views\Orchard.Users\Account\AccessDenied.cshtml" />
     <Content Include="Views\Orchard.Users\Account\ChallengeEmailFail.cshtml" />
     <Content Include="Views\Orchard.Users\Account\ChallengeEmailSent.cshtml" />
@@ -290,7 +287,6 @@
     <Content Include="Views\Parts\ListOfComments.cshtml" />
     <Content Include="Views\Parts\MenuWidget.cshtml" />
     <Content Include="Views\Parts\Search.SearchForm.cshtml" />
-    <Content Include="Views\Parts\Tags.ShowTags.cshtml" />
     <Content Include="Views\Parts\Title.cshtml" />
     <Content Include="Views\Parts\Title.Summary.cshtml" />
     <Content Include="Views\PoweredBy.cshtml" />
@@ -306,12 +302,6 @@
     <Content Include="Less\Alerts.less" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Less\Close.less" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Less\Layout\AfterContent.less" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\Media.Summary.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -319,6 +309,39 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Parts\Common.Metadata.Summary.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Branding.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Less\Layout\Asides.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Less\Layout\Common.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Less\Layout\Triples.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Less\Layout\Footer.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Less\Widgets\Menu.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Parts\Tags.ShowTags.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Orchard.Tags\Home\Search.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Less\Layout\Main.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Less\Rtl.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Document.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

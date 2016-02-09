@@ -13,6 +13,5 @@
 }
 
 <div class="alert alert-dismissible @messageClass" role="alert">
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
     @Html.Raw(Html.Encode(Model.Message).Replace("\n", "<br />"))
 </div>

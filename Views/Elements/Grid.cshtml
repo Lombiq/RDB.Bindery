@@ -2,10 +2,10 @@
 
 @{
     var tagBuilder = TagBuilderExtensions.CreateElementTagBuilder(Model);
-    tagBuilder.AddCssClass("container");
+    tagBuilder.AddCssClass("container-fluid");
     tagBuilder.AddCssClass("orchard-layouts-root");
 }
 
 @tagBuilder.StartElement
-@DisplayChildren(Model)
+    @DisplayChildren(Model)
 @tagBuilder.EndElement

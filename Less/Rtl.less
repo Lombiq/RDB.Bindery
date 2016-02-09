@@ -1,0 +1,195 @@
+﻿@import "Variables.less";
+
+//
+// RTL
+// --------------------------------------------------
+// All styling for the RTL is here, this is a rather
+// monolithic file containing styling for all areas.
+// (This may be changed in the future.)
+// --------------------------------------------------
+
+body {
+    direction: rtl;
+    unicode-bidi: embed;
+}
+
+
+//
+// Header
+// --------------------------------------------------
+
+@media (min-width: @screen-md-min) { 
+    .zone-header {
+        float: right;
+    }
+}
+
+// Reverse site branding padding as the navigation
+// toggle is now on the other side of the screen.
+
+#site-branding {
+    padding-left: 84px;
+    padding-right: 0;
+
+    @media (min-width: @screen-sm-min) {
+        padding-left: 0;
+    }
+}
+
+
+//
+// Header
+// --------------------------------------------------
+
+// Change the side of the screen that the navigation
+// toggle appears on.
+
+#navigation-toggle {
+    right: 0;
+    left: 15px;
+
+    @media (min-width: @screen-sm-min) {
+        left: 60px;
+        right: 0;
+    }
+}
+
+// Top level menu items -----------------------------
+
+@media (min-width: @screen-md-min) { 
+    .zone-navigation > nav {
+        text-align: left;
+    }
+
+    // Reverse margins on top level navigation items.
+
+    .zone-navigation > nav > ul > li > a {
+        margin-left: 18px;
+        margin-right: 0;
+    }
+
+    .zone-navigation > nav > ul > li.last > a {
+        margin-left: 0; // Remove margin for item at the layout edge.
+    }
+}
+
+// First level menu items ---------------------------
+
+// Reverse sub menu margins on mobile displays.
+
+.zone-navigation > nav > ul > li.dropdown > ul {
+    margin-left: 0;
+    margin-right: 35px;
+}
+
+@media (min-width: @screen-md-min) { 
+    // Reverse margin on the dropdown caret indicator.
+
+    .zone-navigation > nav > ul > li.dropdown > a:after {
+        margin-left: 0;
+        margin-right: 4px;
+    }
+
+    // Move inactive dropdowns to the right instead of left as in LTR languages.
+    // Translating the menu off screen to the left in RTL causes
+    // strange page overflow problems.
+
+    .zone-navigation > nav > ul > li.dropdown > ul {
+        left: 0;
+        right: -999999%;
+        margin-right: 0;
+        margin-right: -110px;
+    }
+
+    .zone-navigation > nav > ul > li.dropdown:hover > ul {
+        left: 0;
+        right: 50%;
+    }
+
+    // Correct the position of the triangle at the top of
+    // dropdown lists.
+    .zone-navigation > nav > ul > li.dropdown > ul > li:first-child:before {
+        left: 0;
+        margin-left: 0;
+        right: 50%;
+        margin-right: -10px;
+    }
+}
+
+
+//
+// Widgets
+// --------------------------------------------------
+
+// This section is basically loads of removing padding
+// from the right side of lists.
+
+// Tag cloud widget.
+
+.widget-tag-cloud { 
+    ul {
+        text-align: right;
+        padding-right: 0;
+    }
+}
+
+// Recent blog posts widget.
+
+.widget-recent-blog-posts {
+    .recent-blog-posts-list {
+        padding-right: 0;
+    }
+}
+
+// Menu widget.
+
+#content,
+#triples,
+#footer-twins {
+    .widget-menu-widget {
+        ul {
+            padding-right: 0;
+
+            ul {
+                li {
+                    margin-left: 0 !important;
+                    margin-right: 16px;
+                }
+            }
+        }
+    }
+}
+
+// Blog archives widget.
+
+.widget-blog-archives {
+    ul {
+        padding-right: 0;
+    }
+}
+
+
+//
+// Footer Twins
+// --------------------------------------------------
+
+@media (min-width: @screen-md-min) { 
+    .zone-footer-twins-second {
+        float: left !important;
+    }
+}
+
+
+//
+// Footer and Colophon
+// --------------------------------------------------
+
+@media (min-width: @screen-md-min) { 
+    .copyright {
+        float: right;
+    }
+
+    .user-actions {
+        text-align: left;
+    }
+}

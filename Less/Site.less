@@ -5,11 +5,13 @@
 @import "Variables.less";
 @import "../Vendor/Bootstrap/less/mixins.less";
 
+
 //
 // Normalize and Dependencies
 // --------------------------------------------------
 
 @import "../Vendor/Bootstrap/less/normalize.less";
+
 
 //
 // Core
@@ -21,9 +23,8 @@
 @import "Type.less";
 @import "Code.less";
 @import "Tables.less";
-@import "Alerts.less";
-@import "Close.less";
 @import "Forms.less";
+@import "Alerts.less";
 @import "Buttons.less";
 @import "Pager.less";
 
@@ -32,13 +33,16 @@
 // Layout
 // --------------------------------------------------
 
+@import "Layout/Common.less";
 @import "Layout/Header.less";
+@import "Layout/Main.less";
 @import "Layout/Messages";
-@import "Layout/BeforeContent.less";
 @import "Layout/Content.less";
-@import "Layout/AfterContent.less";
+@import "Layout/Asides.less";
+@import "Layout/Triples.less";
+@import "Layout/FooterTwins.less";
 @import "Layout/Footer.less";
-@import "Layout/SiteMeta.less";
+@import "Layout/Colophon.less";
 
 
 //
@@ -75,3 +79,4 @@
 @import "Widgets/Search.less";
 @import "Widgets/RecentBlogPosts.less";
 @import "Widgets/BlogArchives.less";
+@import "Widgets/Menu.less";

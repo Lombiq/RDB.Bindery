@@ -6,5 +6,5 @@
 }
 
 @if (Model.Terms.Count > 0) {
-<span class="taxonomy-field">@name.CamelFriendly() @(new HtmlString( string.Join(", ", terms.Select(t => Html.ItemDisplayLink(t.Name, t.ContentItem ).ToString()).ToArray())))</span>
+    <span class="taxonomy-field">@name.CamelFriendly() @(new HtmlString( string.Join(", ", terms.Select(t => Html.ItemDisplayLink(t.Name, t.ContentItem ).ToString()).ToArray())))</span>
 }

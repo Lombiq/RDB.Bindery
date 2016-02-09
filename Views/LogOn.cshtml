@@ -26,12 +26,14 @@
 
 @using (Html.BeginFormAntiForgeryPost(Url.Action("LogOn", new { ReturnUrl = Request.QueryString["ReturnUrl"] }))) {
     <div class="form-group">
-        @Html.TextBox("userNameOrEmail", "", new { id = "username-email", autofocus = "autofocus", placeholder = @T("Username or Email") })
+        <label for="username-email">@T("Username")</label>
+        @Html.TextBox("userNameOrEmail", "", new { id = "username-email", autofocus = "autofocus" })
         @Html.ValidationMessage("userNameOrEmail")
     </div>
-    
-    <div class="form-group">        
-        @Html.Password("password", "", new { placeholder = @T("Password") })
+
+    <div class="form-group">
+        <label for="password">@T("Password")</label>
+        @Html.Password("password", "")
         @Html.ValidationMessage("password")
     </div>
     

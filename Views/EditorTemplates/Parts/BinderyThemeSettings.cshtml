@@ -4,11 +4,11 @@
     using (Script.Head()) 
     {
         <style>
-            .ta-settings {
+            .rdb-settings {
                 margin-bottom: 19px;
             }
 
-            .ta-settings label {
+            .rdb-settings label {
                 font-weight: bold;
                 font-size: 14px;
                 margin-bottom: 4px;
@@ -17,7 +17,7 @@
     } 
 }
 
-<div class="ta-settings">
-    <label for="@Html.IdFor(x => x.SelectedColourScheme)">@T("Colour Scheme")</label>
-    @Html.DropDownListFor(x => x.SelectedColourScheme, Model.ColourSchemes)
+<div class="rdb-settings">
+    <label for="@Html.IdFor(x => x.SelectedColorScheme)">@T("Color Scheme")</label>
+    @Html.DropDownListFor(x => x.SelectedColorScheme, Model.ColorSchemes)
 </div>
