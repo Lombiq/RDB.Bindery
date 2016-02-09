@@ -1,4 +1,6 @@
-﻿@functions {
+﻿@using Orchard.Localization
+
+@functions {
     // Taken from The Theme Machine, allows for collapsable widget areas.
     string CalcuClassify(string[] zoneNames, string classNamePrefix)
     {
@@ -19,6 +21,11 @@
 
     Style.Include("//fonts.googleapis.com/css?family=Open+Sans:400italic,400,700,300");
     Style.Require("RDB.Bindery.Styles");
+
+    if (WorkContext.CurrentCultureInfo().TextInfo.IsRightToLeft) 
+    {
+        Style.Require("RDB.Bindery.Styles.Rtl");
+    }
 
     Script.Require("jQuery");
     Script.Require("RDB.Bindery.Scripts");

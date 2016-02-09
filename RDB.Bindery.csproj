@@ -82,6 +82,8 @@
     <Content Include="Styles\ColorSchemes\Grey.min.css" />
     <Content Include="Styles\ColorSchemes\White.css" />
     <Content Include="Styles\ColorSchemes\White.min.css" />
+    <Content Include="Styles\Rtl.css" />
+    <Content Include="Styles\Rtl.min.css" />
     <Content Include="Styles\Site.css" />
     <Content Include="Styles\Site.min.css" />
     <Content Include="Vendor\Bootstrap\fonts\glyphicons-halflings-regular.svg" />
@@ -334,6 +336,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Less\Layout\Main.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Less\Rtl.less" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

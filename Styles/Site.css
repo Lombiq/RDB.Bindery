@@ -3887,7 +3887,7 @@ input[type="submit"] .badge {
 }
 @media (min-width: 992px) {
   .footer-twins-12 .zone-footer-twins-second {
-    float: right !important;
+    float: right;
   }
 }
 .zone-footer {

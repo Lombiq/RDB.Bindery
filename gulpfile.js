@@ -11,13 +11,15 @@ var gulp = require("gulp"),
  */
 
 gulp.task("buildLess", function() {
-    return gulp.src("./Less/Site.less")
+    return gulp.src(["./Less/Site.less",
+        "./Less/Rtl.less"])
         .pipe(less())
         .pipe(gulp.dest("Styles"));
 });
 
 gulp.task("minifyStyles", function() {
-    return gulp.src("./Styles/Site.css")
+    return gulp.src(["./Styles/Site.css",
+        "./Styles/Rtl.css"])
         .pipe(minify())
         .pipe(rename({
             extname: ".min.css"
