@@ -415,4 +415,7 @@
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Parts\Common.Body.Summary-BlogFeedItem.cshtml" />
+  </ItemGroup>
 </Project>
