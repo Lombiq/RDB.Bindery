@@ -1,0 +1,19 @@
+﻿@{
+/// <summary>
+/// Specify resource inclusions here
+/// 
+/// Override in child theme if you want to include different resources.
+/// To just add to this set, override AdditionalTopResources.cshtml if you want to add resources to the top or AdditionalResources.cshtml
+/// to add to the bottom.
+/// </summary>
+}
+
+@using Orchard.UI.Resources;
+
+@{
+    RegisterLink(new LinkEntry { Type = "image/x-icon", Rel = "shortcut icon", Href = Url.Content("~/modules/orchard.themes/Content/orchard.ico") });
+
+    Script.Require("Html5Shiv").UseCondition("lt IE 9").AtHead();
+
+    Display.AdditionalResources();
+}
